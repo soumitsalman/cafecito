@@ -8,9 +8,9 @@
     <style>
         :root {
             --charcoal-bg: #1a1a1a; /* Charcoal black/dark gray */
-            --espresso: #4a3728; /* Espresso/coffee primary color */
+            --espresso: #4e392a; /* Espresso/coffee primary color */
             --espresso-light: #6b4e31; /* Lighter espresso shade */
-            --warm-cream: #F5E8C7; /* Warm cream accent color */
+            --warm-cream: #b79579; /* Warm cream accent color */
         }
     </style>
 </head>
@@ -22,10 +22,10 @@
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="#home" class="hover:text-[var(--warm-cream)]">Home</a></li>
-                    <li><a href="#features" class="hover:text-[var(--warm-cream)]">Products</a></li>
-                    <li><a href="#api" class="hover:text-[var(--warm-cream)]">API</a></li>
-                    <li><a href="#contact" class="hover:text-[var(--warm-cream)]">Docs</a></li>
+                    <li><a href="#products" class="hover:text-[var(--warm-cream)]">Products</a></li>
+                    <li><a href="#docs" class="hover:text-[var(--warm-cream)]">Docs</a></li>
                     <li><a href="#about" class="hover:text-[var(--warm-cream)]">About</a></li>
+                    <li><a href="#contact" class="hover:text-[var(--warm-cream)]">Contact</a></li>
                     <li><a href="#signup" class="hover:text-[var(--warm-cream)]">Sign Up</a></li>
                 </ul>
             </nav>
@@ -57,8 +57,8 @@
                     <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                         <svg class="w-8 h-8 text-[var(--warm-cream)]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2">Medi Cafe (Alpha)</h4>
-                    <p class="text-gray-400">Billing and payments for anesthesiologists. Because dealing with insurance is worse than a root canal.</p>
+                    <h4 class="text-xl font-semibold mb-2">Yana (Alpha)</h4>
+                    <p class="text-gray-400">Yet Another News API, cause why not.</p>
                 </div>
                 <div class="text-center">
                     <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -67,6 +67,13 @@
                     <h4 class="text-xl font-semibold mb-2">Cortado (Soon-ish)</h4>
                     <p class="text-gray-400">PR and brand management AI. For when you want to look fancy online without hiring a publicist.</p>
                 </div>
+                <div class="text-center">
+                    <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-[var(--warm-cream)]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Medi Cafe (Alpha)</h4>
+                    <p class="text-gray-400">Billing and payments for anesthesiologists. Because dealing with insurance is worse than a root canal.</p>
+                </div>                
             </div>
         </div>
     </section>
@@ -77,11 +84,11 @@
             <h3 class="text-3xl font-bold text-center mb-12">About Our Mess</h3>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://via.placeholder.com/500" alt="Team Image" class="rounded-lg shadow-lg">
+                    <img src="./images/cafecito.jpeg" alt="Team Image" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 md:pl-8 text-white-400">
-                    <p class="mb-4">Project Cafecito is the brainchild of Soumit Salman Rahman and Daniel Oliver Vidaud, two tech geeks who thought, “Why not make life easier for people who actually work for a living?” We’re a bootstrapped outfit—VCs can keep their fancy checks—building AI tools to handle the soul-crushing parts of running a business.</p>
-                    <p>Soumit’s the guy who’s patented stuff and built tech for Microsoft and Dropbox, while Daniel’s the aerospace nerd who made Boeing planes less chaotic. Together, we’re trying to save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a shot.</p>
+                    <p class="mb-4">Project Cafecito is the brainchild of Soumit Salman Rahman and Daniel Oliver Vidaud, two tech geeks who thought, “Why not make life easier for people who actually work for a living?” We’re a bootstrapped outfit—VCs can eat it—building AI tools to handle the soul-crushing parts of running a business.</p>
+                    <p>Soumit’s the guy who’s built some stuff for Microsoft and Aurora, while Daniel’s the aerospace nerd who made Boeing planes less chaotic. Together, we’re trying to save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a shot.</p>
                 </div>
             </div>
         </div>
@@ -95,8 +102,8 @@
                 <div class="space-y-4">
                     <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white">
                     <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white">
-                    <textarea placeholder="Complain, Praise, or Just Say Hi" rows="5" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white"></textarea>
-                    <button class="w-full bg-[var(--espresso)] text-[var(--warm-cream)] p-3 rounded-lg font-semibold hover:bg-[var(--espresso-light)]">Send the Rant</button>
+                    <textarea placeholder="Complain, Praise, or Just Say Hi (We're not reading it anyway)" rows="5" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white"></textarea>
+                    <button class="w-full bg-[var(--espresso)] text-white p-3 rounded-lg font-semibold hover:bg-[var(--espresso-light)]">Cry me a river</button>
                 </div>
             </div>
         </div>
@@ -105,7 +112,7 @@
     <!-- Footer Section -->
     <footer class="bg-[var(--espresso)] text-white py-6">
         <div class="container mx-auto text-center px-4">
-            <p>© 2025 Project Cafecito. We’re still here, somehow.</p>
+            <p>© 2025 Project Cafecito. All rights reserved. We’re still here, somehow.</p>
             <div class="flex justify-center space-x-4 mt-4">
                 <a href="#" class="hover:text-[var(--warm-cream)]">Twitter</a>
                 <a href="#" class="hover:text-[var(--warm-cream)]">LinkedIn</a>
