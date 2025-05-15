@@ -1,114 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add this inside the <head> section -->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <title>Project Cafecito</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
         :root {
-            --charcoal-bg: #1a1a1a; /* Charcoal black/dark gray */
-            --espresso: #4a3728; /* Espresso/coffee primary color */
-            --espresso-light: #6b4e31; /* Lighter espresso shade */
-            --warm-cream: #F5E8C7; /* Warm cream accent color */
+            --charcoal-bg: #1d1d1d;
+            /* Charcoal black/dark gray */
+            --espresso-dark: #4a3728;
+            /* Espresso/coffee primary color */
+            --espresso: #4e392a;
+            --espresso-light: #6b4e31;
+            /* Lighter espresso shade */
+            --warm-cream: #F5E8C7;
+            /* Warm cream accent color */
+            --arrow-thickness: 3;
+        }
+
+        body {
+            font-family: 'Quicksand', serif;
+            font-style: normal;
+            color: #BBBBBB;
         }
     </style>
+    <script>
+        function submitToReddit() {
+            const title = encodeURIComponent(document.getElementById('post-title').value || 'Dude!');
+            const body = encodeURIComponent(document.getElementById('post-body').value || 'WTF');
+            const redditUrl = `https://old.reddit.com/r/projectcafecito/submit/?selftext=true&text=${body}&title=${title}&type=TEXT`;
+            window.location.href = redditUrl;
+        }
+    </script>
 </head>
-<body class="font-sans bg-[var(--charcoal-bg)] text-white">
+
+<body class="bg-[var(--charcoal-bg)] text-white">
     <!-- Header Section -->
-    <header class="bg-[var(--espresso)] text-white py-4">
-        <div class="container mx-auto px-4 flex items-center justify-center md:justify-start">
-            <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[var(--espresso-light)] rounded-md mr-3"></div>
-            <h1 class="text-2xl sm:text-3xl font-bold md:text-left text-center">cafecito.tech</h1>
+    <header class="bg-[var(--espresso)] text-white px-4 py-2">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                    <img src="./images/cafecito.jpeg" class="icon-img rounded-md" alt="Cafecito Logo" />
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold md:text-left text-center">cafecito.tech</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.reddit.com/r/projectcafecito" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                    <img src="./images/reddit-orange.svg" class="icon-img" alt="Reddit" />
+                </a>
+                <a href="#" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                    <img src="./images/discord-white.svg" class="icon-img" alt="Discord" />
+                </a>
+                <a href="https://github.com/soumitsalman" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                    <img src="./images/github-white.svg" class="icon-img" alt="Github" />
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-[var(--espresso)] to-[var(--espresso-light)] text-white py-16 sm:py-20">
+    <section id="home" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] text-white py-8">
         <div class="container mx-auto text-center px-4">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Project Cafecito</h2>
-            <p class="text-base sm:text-lg md:text-xl mb-6">Because who has time for boring, repetitive business tasks? We’re here to automate the nonsense so you can actually do your job.</p>
-            <a href="#contact" class="bg-[var(--warm-cream)] text-[var(--espresso)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-block">Join the Chaos</a>
-            <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('features').scrollIntoView({ behavior: 'smooth' })" class="bg-[var(--espresso-light)] text-[var(--warm-cream)] px-4 h-12 sm:h-14 rounded-full flex items-center justify-center space-x-2 hover:bg-[var(--espresso)]" title="Next: Our Tools">
-                    <span class="text-sm sm:text-base">Next: Our Tools</span>
+            <p class="text-base sm:text-lg md:text-xl mb-6">Because who has time for boring, repetitive business tasks?
+                We’re here to automate the nonsense so you can actually do your job.</p>
+            <!-- <a href="#contact" class="bg-[var(--warm-cream)] text-[var(--espresso)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 inline-block">Join the Chaos</a> -->
+            <!-- <div class="mt-8 flex justify-center">
+                <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })" class="bg-[var(--warm-cream)] text-[var(--espresso)] hover:bg-white rounded-full font-semibold  px-4 h-12 sm:h-14 flex items-center justify-center space-x-2" title="Products">
+                    <span class="text-sm sm:text-base">Products</span>
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </button>
+            </div> -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
+                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
+                    title="Tools">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16">
+    <section id="products" class="py-8">
         <div class="container mx-auto px-4">
             <h3 class="text-2xl sm:text-3xl font-bold text-center mb-12">Our Slightly Useful Tools</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="text-center">
-                    <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-[var(--warm-cream)]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <a href="https://espresso.cafecito.tech">
+                            <img src="./images/espresso.jpeg" class="rounded-md" />
+                        </a>
                     </div>
                     <h4 class="text-lg sm:text-xl font-semibold mb-2">Espresso (Alpha)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">An AI that sips the news and social media for you, so you can pretend to be in the know without the effort.</p>
+                    <p class="text-gray-400 text-sm sm:text-base">An AI that sips the news and social media for you, so
+                        you can pretend to be in the know without the effort.</p>
                 </div>
                 <div class="text-center">
-                    <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-[var(--warm-cream)]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <a href="#contact">
+                            <img src="./images/medicafe.jpeg" class="rounded-md" />
+                        </a>
                     </div>
                     <h4 class="text-lg sm:text-xl font-semibold mb-2">Medi Cafe (Alpha)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">Billing and payments for anesthesiologists. Because dealing with insurance is worse than a root canal.</p>
+                    <p class="text-gray-400 text-sm sm:text-base">Billing and payments for anesthesiologists. Because
+                        dealing with insurance is worse than a root canal.</p>
                 </div>
                 <div class="text-center">
-                    <div class="bg-[var(--espresso-light)] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-[var(--warm-cream)]" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/></svg>
+                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <a href="https://cortado.cafecito.tech">
+                            <img src="./images/cortado.jpeg" class="rounded-md" />
+                        </a>
                     </div>
                     <h4 class="text-lg sm:text-xl font-semibold mb-2">Cortado (Soon-ish)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">PR and brand management AI. For when you want to look fancy online without hiring a publicist.</p>
+                    <p class="text-gray-400 text-sm sm:text-base">PR and brand management AI. For when you want to look
+                        fancy online without hiring a publicist.</p>
                 </div>
             </div>
             <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })" class="bg-[var(--espresso-light)] text-[var(--warm-cream)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:bg-[var(--espresso)]" title="Next: About Us">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
+                    title="Tools">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="bg-[var(--espresso)] py-16">
+    <section id="about" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] py-8">
         <div class="container mx-auto px-4">
             <h3 class="text-2xl sm:text-3xl font-bold text-center mb-12">About Our Mess</h3>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://via.placeholder.com/500" alt="Team Image" class="rounded-lg shadow-lg w-full">
+                <div class="sm:w-1/3 mb-8 md:mb-0">
+                    <img src="./images/cafecito.jpeg" alt="Team Image" class="rounded-lg shadow-lg w-full">
                 </div>
                 <div class="md:w-1/2 md:pl-8 text-white">
-                    <p class="text-sm sm:text-base mb-4">Project Cafecito is the brainchild of Soumit Salman Rahman and Daniel Oliver Vidaud, two tech geeks who thought, “Why not make life easier for people who actually work for a living?” We’re a bootstrapped outfit—VCs can keep their fancy checks—building AI tools to handle the soul-crushing parts of running a business.</p>
-                    <p class="text-sm sm:text-base">Soumit’s the guy who’s built some stuff for Microsoft and Aurora, while Daniel’s the aerospace nerd who made Boeing planes less chaotic. Together, we’re trying to save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a shot.</p>
+                    <p class="text-sm sm:text-base mb-4">Project Cafecito is the brainchild of Soumit Salman Rahman and
+                        Daniel Oliver Vidaud, two tech geeks who thought, “Why not make life easier for people who
+                        actually work for a living?” We’re a bootstrapped outfit—VCs can keep their fancy
+                        checks—building AI tools to handle the soul-crushing parts of running a business.</p>
+                    <p class="text-sm sm:text-base">Soumit’s the guy who’s built some stuff for Microsoft and Aurora,
+                        while Daniel’s the aerospace nerd who made Boeing planes less chaotic. Together, we’re trying to
+                        save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a
+                        shot.</p>
                 </div>
             </div>
             <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="bg-[var(--espresso-light)] text-[var(--warm-cream)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:bg-[var(--espresso)]" title="Next: Contact Us">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
+                    title="Tools">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16">
+    <section id="contact" class="py-8">
         <div class="container mx-auto px-4">
             <h3 class="text-2xl sm:text-3xl font-bold text-center mb-12">Yell at Us</h3>
             <div class="max-w-lg mx-auto">
                 <div class="space-y-4">
-                    <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base">
-                    <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base">
-                    <textarea placeholder="Complain, Praise, or Just Say Hi (We're not reading it anyway)" rows="5" class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base"></textarea>
-                    <button class="w-full bg-[var(--espresso)] text-[var(--warm-cream)] p-3 rounded-lg font-semibold hover:bg-[var(--espresso-light)]">Send the Rant</button>
+                   <input id="post-title" type="text" placeholder="Title"
+                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base">
+                    <textarea id="post-body"
+                        placeholder="Complain, praise, cry us a river, or just say hi (We're not reading it anyway)"
+                        rows="5"
+                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base"></textarea>
+                    <button onclick="submitToReddit()"
+                        class="w-full bg-[var(--espresso)] text-[var(--warm-cream)] p-3 rounded-lg font-semibold hover:bg-[var(--espresso-light)]">Send
+                        it!</button>
                 </div>
             </div>
             <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' })" class="bg-[var(--espresso-light)] text-[var(--warm-cream)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center hover:bg-[var(--espresso)]" title="Back to Top">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
+                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
+                    title="Tools">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -117,13 +208,17 @@
     <!-- Footer Section -->
     <footer class="bg-[var(--espresso)] text-white py-6">
         <div class="container mx-auto text-center px-4">
-            <p class="text-sm sm:text-base">© 2025 Project Cafecito. All rights reserved. We’re still here, somehow.</p>
+            <p class="text-sm sm:text-base">© 2025 Project Cafecito. We’re still here, somehow. All rights reserved.</p>
             <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Twitter</a>
-                <a href="#" class="hover:text-[var(--warm-cream)] text-sm sm:text-base">LinkedIn</a>
-                <a href="#" class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Instagram</a>
+                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/terms-of-use.md"
+                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Terms of Use</a>
+                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/privacy-policy.md"
+                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Privacy Policy</a>
+                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/about-us.md"
+                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">About Us</a>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
