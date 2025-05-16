@@ -1,0 +1,1 @@
+This thing sits here and does nothing. It's sole purpose of existence is to make azure static web app deployment workflow happy.
