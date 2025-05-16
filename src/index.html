@@ -42,21 +42,21 @@
 <body class="bg-[var(--charcoal-bg)] text-white">
     <!-- Header Section -->
     <header class="p-4">
-        <div class="container flex items-center justify-between">
-            <div class="flex items-center gap-3">
+        <div class="flex items-center justify-between">
+            <div id="cafecito_logo" class="flex items-center gap-3">
                 <div class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
                     <img src="images/cafecito.jpeg" class="icon-img rounded-md" alt="Cafecito Logo" />
                 </div>
-                <h1 class="text-2xl md:text-3xl font-bold md:text-left text-center">cafecito.tech</h1>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-left">cafecito.tech</h1>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="https://www.reddit.com/r/projectcafecito" class="w-6 h-6 flex justify-center">
+            <div id="contact_links" class="flex items-center justify-center gap-4">
+                <a href="https://www.reddit.com/r/projectcafecito" class="w-4 h-4 sm:w-6 sm:h-6  flex justify-center">
                     <img src="images/reddit-orange.svg" class="icon-img" alt="Reddit" />
                 </a>
-                <a href="#" class="w-6 h-6 flex justify-center">
+                <a href="#" class="w-4 h-4 sm:w-6 sm:h-6 flex justify-center">
                     <img src="images/discord-white.svg" class="icon-img" alt="Discord" />
                 </a>
-                <a href="https://github.com/soumitsalman" class="w-6 h-6 flex justify-center">
+                <a href="https://github.com/soumitsalman" class="w-4 h-4 sm:w-6 sm:h-6  flex justify-center">
                     <img src="images/github-white.svg" class="icon-img" alt="Github" />
                 </a>
             </div>
@@ -65,7 +65,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] rounded-md py-8">
-        <div class="container mx-auto text-center px-4">
+        <div id="cafecito_banner" class="container mx-auto text-center px-4">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Project Cafecito</h2>
             <p class="text-base sm:text-lg md:text-xl mb-6">Because who has time for boring, repetitive business tasks?
                 We’re here to automate the nonsense so you can actually do your job.</p>
@@ -142,11 +142,10 @@
 
     <!-- About Section -->
     <section id="about" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] rounded-md py-8">
-        <div class="container">
+        <div class="container mx-auto px-4 w-full">
             <h3 class="text-2xl sm:text-3xl font-bold text-center mb-4">About Our Mess</h3>
-            <div class="flex flex-col md:flex-row justify-center items-center px-4 w-full">
-                
-                <div class="m-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 flex gap-8">                
+                <div class="sm:col-span-2 lg:col-span-4 xl:col-span-5">
                     <p class="text-sm sm:text-base mb-4">
                         Project Cafecito is the brainchild of <a href="https://www.linkedin.com/in/soumitsrahman">Soumit Salman Rahman</a> and
                         <a href="https://www.linkedin.com/in/dvidaud">Daniel Oliver Vidaud</a>, two tech geeks who thought, “Why not make life easier for people who
@@ -156,7 +155,7 @@
                         save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a
                         shot.</p>
                 </div>
-                <div class="xl:w-1/3 p-4 md:self-right">
+                <div>
                     <img src="images/about-us.jpeg" alt="Founders" class="rounded-lg shadow-lg w-full">
                 </div>
             </div>
