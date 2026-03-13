@@ -19,106 +19,20 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" type="image/png" href="/images/cafecito.png">
+    <link rel="stylesheet" href="common.css">
     <title>Project Cafecito | Coffee-Fueled AI Products</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;700;800&display=swap');
-
-        :root {
-            --ink: #120b07;
-            --roast: #2e160b;
-            --espresso: #4b2b16;
-            --caramel: #c1813b;
-            --latte: #ead8bf;
-            --foam: #f5efe5;
-            --mint: #68dad3;
-            --shadow: rgba(10, 6, 4, 0.45);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            color: var(--foam);
-            background:
-                radial-gradient(circle at 15% 15%, rgba(193, 129, 59, 0.25), transparent 32%),
-                radial-gradient(circle at 85% 85%, rgba(104, 218, 211, 0.15), transparent 28%),
-                linear-gradient(145deg, #160d08 0%, #26150d 45%, #110804 100%);
-            font-family: 'Manrope', sans-serif;
-            min-height: 100vh;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1120px, calc(100% - 2rem));
-            margin: 0 auto;
-        }
-
-        .top-nav {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            backdrop-filter: blur(14px);
-            background: rgba(18, 11, 7, 0.72);
-            border-bottom: 1px solid rgba(234, 216, 191, 0.16);
-        }
-
-        .top-nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.9rem 0;
-            gap: 1rem;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-
-        .brand img {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px var(--shadow);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
-            font-size: 0.92rem;
-        }
-
-        .nav-pill {
-            padding: 0.45rem 0.75rem;
-            border-radius: 999px;
-            border: 1px solid rgba(234, 216, 191, 0.26);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .nav-pill:hover {
-            transform: translateY(-1px);
-            background: rgba(234, 216, 191, 0.12);
-        }
-
         .hero {
             padding: 3.2rem 0 2.4rem;
         }
 
         .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 1.2rem;
+        }
+
+        .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 1.2rem;
@@ -147,15 +61,6 @@
             color: rgba(245, 239, 229, 0.75);
         }
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Fraunces', serif;
-            margin: 0;
-            line-height: 1.1;
-            letter-spacing: 0.02em;
-        }
-
         h1 {
             font-size: clamp(2rem, 6vw, 3.45rem);
             margin: 0.85rem 0 1rem;
@@ -182,7 +87,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            font-family: inherit;
+            /* font-family: inherit; */
         }
 
         .btn:hover {
@@ -221,79 +126,36 @@
             font-size: 0.86rem;
         }
 
-        .section {
-            padding: 1rem 0 2.3rem;
+        .about-copy,
+        .about-visual {
+            border-radius: 24px;
+            border: 1px solid rgba(234, 216, 191, 0.2);
+            overflow: hidden;
+            box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
         }
 
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 0.9rem;
-            margin-bottom: 1rem;
+        .about-copy {
+            padding: 2rem;
+            background:rgba(30, 16, 10, 0.7);
+                /* linear-gradient(170deg, rgba(193, 129, 59, 0.25), rgba(46, 22, 11, 0.6)),
+                #1f110a; */
+            animation: riseIn 0.7s ease;
         }
 
-        .section-title p {
-            color: rgba(245, 239, 229, 0.72);
+        .about-copy p {
             margin: 0;
+            color: rgba(245, 239, 229, 0.9);
+            max-width: 56ch;
+            line-height: 1.6;
         }
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.95rem;
-        }
-
-        .product {
-            background: rgba(30, 16, 10, 0.7);
-            border: 1px solid rgba(245, 239, 229, 0.16);
-            border-radius: 18px;
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: 82px 1fr;
-            gap: 0.95rem;
-            align-items: center;
-            transform: translateY(12px);
-            opacity: 0;
-            animation: cardIn 0.55s ease forwards;
-        }
-
-        .product:nth-child(1) { animation-delay: 0.12s; }
-        .product:nth-child(2) { animation-delay: 0.2s; }
-        .product:nth-child(3) { animation-delay: 0.28s; }
-        .product:nth-child(4) { animation-delay: 0.36s; }
-
-        .product-icon {
-            width: 82px;
-            height: 82px;
-            object-fit: cover;
-            border-radius: 14px;
-            border: 1px solid rgba(245, 239, 229, 0.22);
-        }
-
-        .product h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.22rem 0.52rem;
-            border-radius: 999px;
-            margin-bottom: 0.45rem;
-            color: #1d0f08;
-            background: var(--caramel);
-        }
-
-        .product p {
-            margin: 0;
-            color: rgba(245, 239, 229, 0.84);
-            line-height: 1.45;
-            font-size: 0.95rem;
+        .about-visual {
+            position: relative;
+            min-height: 330px;
+            background:
+                linear-gradient(150deg, rgba(18, 11, 7, 0.3), rgba(18, 11, 7, 0.85)),
+                url('images/about-us.png') center/cover no-repeat;
+            animation: riseIn 0.9s ease;
         }
 
         .about-wrap {
@@ -317,13 +179,6 @@
             line-height: 1.55;
         }
 
-        .about-photo {
-            width: 100%;
-            border-radius: 14px;
-            margin-top: 1rem;
-            border: 1px solid rgba(245, 239, 229, 0.15);
-        }
-
         .link-row {
             margin-top: 1rem;
             display: flex;
@@ -343,72 +198,17 @@
             background: rgba(245, 239, 229, 0.12);
         }
 
-        .footer {
-            margin: 1rem 0 2rem;
-            color: rgba(245, 239, 229, 0.68);
-            text-align: center;
-            font-size: 0.88rem;
-        }
-
-        .footer-links {
-            margin-top: 0.7rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        @keyframes riseIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes cardIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @media (max-width: 960px) {
             .hero-grid,
-            .about-wrap,
-            .products {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
             .hero {
                 padding-top: 2.1rem;
             }
-
-            .product {
-                grid-template-columns: 72px 1fr;
-            }
-
-            .product-icon {
-                width: 72px;
-                height: 72px;
-            }
         }
-
         @media (max-width: 620px) {
-            .top-nav-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-links {
-                width: 100%;
-                overflow-x: auto;
-                padding-bottom: 0.2rem;
-            }
-
             .hero-copy,
             .about-card,
             .contact-card {
@@ -476,48 +276,47 @@
         </div>
     </header>
 
-    <section class="section" id="products">
+    <section class="section section--spacious" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Current Products</h2>
+                <h2>Products</h2>
                 <p>Yes, these are real. No, we still cannot fix your printer.</p>
             </div>
 
             <div class="products">
-                <article class="product">
+                <article class="product shared-panel shared-panel--interactive product--clickable">
+                    <a class="product-link-overlay" href="beans.html" aria-label="Open Beans"></a>
                     <img class="product-icon" src="images/beans.png" alt="Beans product icon">
                     <div>
-                        <span class="tag">API + MCP</span>
+                        <span class="tag shared-badge shared-badge--caramel">API + MCP</span>
                         <h3>Beans</h3>
                         <p>News and blogs API with semantic search, filters, and MCP support for AI workflows.</p>
-                        <div class="link-row">
-                            <a class="mini-link" href="beans.html">Open Beans Page</a>
-                        </div>
                     </div>
                 </article>
 
-                <article class="product">
+                <article class="product shared-panel shared-panel--interactive product--clickable">
+                    <a class="product-link-overlay" href="https://espresso.cafecito.tech" aria-label="Open Espresso"></a>
                     <img class="product-icon" src="images/espresso.png" alt="Espresso product icon">
                     <div>
-                        <span class="tag">Market Intelligence</span>
+                        <span class="tag shared-badge shared-badge--caramel">Publications</span>
                         <h3>Espresso</h3>
                         <p>Curated market intelligence that helps teams track what matters and ignore hype noise.</p>
                     </div>
                 </article>
 
-                <article class="product">
+                <article class="product shared-panel">
                     <img class="product-icon" src="images/cortado.png" alt="Cortado product icon">
                     <div>
-                        <span class="tag">Social Automation</span>
+                        <span class="tag shared-badge shared-badge--caramel">Social Automation</span>
                         <h3>Cortado</h3>
                         <p>Social media automation for consistent posting, campaign hygiene, and less manual wrangling.</p>
                     </div>
                 </article>
 
-                <article class="product">
+                <article class="product shared-panel">
                     <img class="product-icon" src="images/medicafe.png" alt="MediCafe product icon">
                     <div>
-                        <span class="tag">Medical Ops</span>
+                        <span class="tag shared-badge shared-badge--caramel">Medical Ops</span>
                         <h3>MediCafe</h3>
                         <p>Medical billing automation focused on reducing operational friction and claim-processing pain.</p>
                     </div>
@@ -526,9 +325,9 @@
         </div>
     </section>
 
-    <section class="section" id="about">
-        <div class="container about-wrap">
-            <article class="about-card">
+    <section class="section section--spacious" id="about">
+        <div class="container about-grid">
+            <article class="about-copy">
                 <h2>About Us</h2>
                 <p>
                     Project Cafecito is run by Soumit Salman Rahman and Daniel Oliver Vidaud.
@@ -539,34 +338,14 @@
                     We are bootstrapped, experimental, and aggressively practical.
                     If a feature does not help real workflows, we delete it and pretend we meant to do that all along.
                 </p>
-                <img class="about-photo" src="images/about-us.png" alt="Project Cafecito founders">
             </article>
-
-            <article class="contact-card" id="contact">
-                <h2>Yell At Us Politely</h2>
-                <p>
-                    Got feedback, bug reports, or a brilliant idea you want us to build?
-                    Send it to our subreddit and we will read it between deploys and existential debugging.
-                </p>
-
-                <div style="margin-top: 1rem; display: grid; gap: 0.65rem;">
-                    <input id="post-title" type="text" placeholder="Post title" style="width: 100%; border-radius: 10px; border: 1px solid rgba(245,239,229,0.25); background: rgba(10,6,4,0.45); color: var(--foam); padding: 0.7rem 0.8rem;">
-                    <textarea id="post-body" rows="6" placeholder="Message body" style="width: 100%; border-radius: 10px; border: 1px solid rgba(245,239,229,0.25); background: rgba(10,6,4,0.45); color: var(--foam); padding: 0.7rem 0.8rem;"></textarea>
-                    <button type="button" class="btn btn-primary" onclick="openRedditThread()">Open Reddit Draft</button>
-                </div>
-
-                <div class="link-row">
-                    <a class="mini-link" href="https://www.reddit.com/r/projectcafecito">Reddit</a>
-                    <a class="mini-link" href="https://github.com/soumitsalman">GitHub</a>
-                    <a class="mini-link" href="docs/about-us.md">About Notes</a>
-                </div>
-            </article>
+            <div class="about-visual" role="img" aria-label="Project Cafecito founders"></div>
         </div>
     </section>
 
-    <footer class="footer container">
+    <footer class="site-footer container">
         <div>© 2026 Project Cafecito. Still shipping. Still caffeinated.</div>
-        <div class="footer-links">
+        <div class="site-footer-links">
             <a href="docs/terms-of-use.md">Terms</a>
             <a href="docs/privacy-policy.md">Privacy</a>
             <a href="docs/project-cafecito.md">Project Notes</a>
