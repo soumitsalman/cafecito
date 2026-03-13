@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beans by Project Cafecito: AI-powered news and blogs API with semantic search, vector retrieval, and MCP-friendly workflows.">
+    <meta name="keywords" content="Beans API, news API, blog API, vector search, MCP, Project Cafecito">
+    <meta property="og:title" content="Beans API & MCP | Project Cafecito">
+    <meta property="og:description" content="Curated news and blogs with semantic search, rich filtering, and clean JSON endpoints.">
+    <meta property="og:image" content="https://cafecito.tech/images/beans-banner.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Beans API & MCP | Project Cafecito">
+    <meta name="twitter:description" content="News and blogs API for teams that like useful data and low drama.">
+    <meta name="twitter:image" content="https://cafecito.tech/images/beans-banner.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Beans API & MCP | Project Cafecito</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .hero {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('images/beans-banner.png') center/cover no-repeat;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+        }
+
+        .hero-copy {
+            background: transparent;
+            border: none;
+            overflow: visible;
+            padding: 0;
+        }
+
+        .hero-copy {
+            padding: 1.3rem;
+            transform: translateY(10px);
+            opacity: 0;
+            animation: riseIn 0.7s ease forwards;
+        }
+
+        .hero-copy h1 {
+            margin: 0.5rem 0 0.9rem;
+            /* font-family: 'Space Grotesk', sans-serif; */
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-copy p {
+            margin: 0;
+            color: rgba(245, 239, 229, 0.9);
+            max-width: 58ch;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .list {
+            margin: 0.6rem 0 0;
+            padding-left: 1rem;
+            color: rgba(245, 239, 229, 0.84);
+            font-size: 0.88rem;
+        }
+
+        .code-block {
+            border-radius: 14px;
+            border: 1px solid rgba(234, 216, 191, 0.35);
+            background: #120b07;
+            overflow: auto;
+            margin-top: 0.8rem;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0.95rem;
+            color: rgba(104, 218, 211, 0.96);
+            font-size: 0.86rem;
+            line-height: 1.45;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 0.8rem;
+        }
+
+        @media (max-width: 960px) {
+            .hero,
+            .split {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero-copy {
+                padding: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container top-nav-inner">
+            <a href="index.html" class="brand">
+                <img src="images/cafecito.png" alt="Project Cafecito logo">
+                <span>Project Cafecito</span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-pill" href="index.html#products">Products</a>
+                <a class="nav-pill" href="https://developer.cafecito.tech">API</a>
+                <a class="nav-pill" href="index.html#about">About</a>
+                <a class="nav-pill" href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero" id="what-is-beans">
+            <article class="hero-copy">
+                <div style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(244,227,199,0.74);">Project Cafecito / Beans</div>
+                <h1>News & Blogs API</h1>
+                <p>
+                    Beans is our aggregation and search service for news and blogs.
+                    It supports semantic query search, practical filtering, and clean JSON output.
+                    Think of it as your content firehose with better manners.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge shared-badge shared-badge--subtle"><img src="images/mcp-dark.png" alt="MCP" class="icon-badge">MCP</span>
+                    <span class="badge shared-badge shared-badge--subtle"><svg class="icon-badge" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14M16 5v14M9 5H7c-1 0-2 1-2 2v10c0 1 1 2 2 2h2M15 5h2c1 0 2 1 2 2v10c0 1-1 2-2 2h-2"/></svg>JSON</span>
+                    <span class="badge shared-badge shared-badge--subtle"><svg class="icon-badge" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Vector Search</span>
+                    <span class="badge shared-badge shared-badge--subtle"><svg class="icon-badge" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22v-7M12 7H7.5a2.5 2.5 0 0 1 0-5H12m0 0H16.5a2.5 2.5 0 0 1 0 5H12"/></svg>Free Tier</span>
+                    <span class="badge shared-badge shared-badge--ghost-mint">v0.1 | still brewing</span>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" id="why-beans">
+            <h2>Why Beans</h2>
+            <div class="grid">
+                <article class="card shared-panel">
+                    <h3>📡 Scale & Coverage</h3>
+                    <p>
+                        7K+ publishers, zero setup. We handle the boring data collection for you.
+                    </p>
+                </article>
+                <article class="card shared-panel">
+                    <h3>🧠 AI Enrichment Built-In</h3>
+                    <p>
+                        We extract entities, sentiment, topics, and regions automatically.
+                        No janky ETL pipelines—just analytics-ready JSON out of the box.
+                    </p>
+                </article>
+                <article class="card shared-panel">
+                    <h3>📈 Trend Scoring</h3>
+                    <p>
+                        See what's actually getting traction. Ranked by social signals
+                        (likes, shares, comments)—not just the newest stuff collecting dust.
+                    </p>
+                </article>
+                <article class="card shared-panel">
+                    <h3>🔗 News Propagation Mapping</h3>
+                    <p>
+                        Watch a story travel from niche outlets to the mainstream.
+                        See how narratives shift and spot where the consensus is forming.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="get-beans">
+            <h2>Get Started</h2>
+            <div class="products products--no-media">
+                <article class="product shared-panel shared-panel--interactive product--clickable">
+                    <a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/beans-howto" aria-label="Open Beans API"></a>
+                    <div>
+                        <span class="tag shared-badge shared-badge--mint">Live</span>
+                        <h3>🔌 API & MCP</h3>
+                        <p>
+                            Full endpoint reference, authentication, filtering, and examples.
+                            Ready to integrate Beans into your app or agent.
+                        </p>
+                    </div>
+                   
+                </article>
+                <article class="product shared-panel">
+                    <div>
+                        <span class="tag shared-badge shared-badge--subtle reviving-badge">Reviving soon</span>
+                        <h3>🌐 Web</h3>
+                        <p>
+                            RSS feed reader on steroids. Search, filter, and explore trends
+                            without touching a single API call.
+                        </p>
+                    </div>
+                    
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>© 2026 Project Cafecito. Still shipping. Still caffeinated.</div>
+        <div class="site-footer-links">
+            <a href="docs/terms-of-use.md">Terms</a>
+            <a href="docs/privacy-policy.md">Privacy</a>
+            <a href="docs/project-cafecito.md">Project Notes</a>
+        </div>
+    </footer>
+</body>
+</html>
