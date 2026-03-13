@@ -3,250 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Project Cafecito offers AI tools to automate business tasks like billing and PR. Save time with Espresso, Medi Cafe, and Cortado.">
-    <meta name="keywords" content="AI automation, business tools, billing software, PR management, tech startup">
+    <meta name="description" content="Project Cafecito builds coffee-fueled AI products for news intelligence, market analysis, social automation, and medical billing workflows.">
+    <meta name="keywords" content="AI automation, news API, market intelligence, social media automation, medical billing automation, Project Cafecito">
     <meta name="robots" content="index, follow">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Project Cafecito - AI Tools for Business Automation">
-    <meta property="og:description" content="Automate repetitive tasks with AI tools like Espresso, Medi Cafe, and Cortado. Built by tech geeks for real workers.">
-    <meta property="og:image" content="https://cafecito.tech/images/cafecito-2.png">
+    <meta property="og:title" content="Project Cafecito | Coffee-Fueled AI Tools">
+    <meta property="og:description" content="Four products. Too many ideas. Just enough caffeine. Meet Beans, Espresso, Cortado, and MediCafe.">
+    <meta property="og:image" content="https://cafecito.tech/images/cafecito-banner.png">
     <meta property="og:url" content="https://cafecito.tech">
     <meta property="og:type" content="website">
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Project Cafecito - AI Tools for Business Automation">
-    <meta name="twitter:description" content="Automate business tasks with AI. Try Espresso, Medi Cafe, and Cortado. Built by Soumit Rahman and Daniel Vidaud.">
-    <meta name="twitter:image" content="https://cafecito.tech/images/cafecito-2.png">
-    <!-- Canonical URL -->
+    <meta name="twitter:title" content="Project Cafecito | Coffee-Fueled AI Tools">
+    <meta name="twitter:description" content="We automate the repetitive stuff so your team can do actual work.">
+    <meta name="twitter:image" content="https://cafecito.tech/images/cafecito-banner.png">
     <link rel="canonical" href="https://cafecito.tech">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
-    <link rel="apple-touch-icon" type="image/png" href="/images/cafecito-2.png">
-    <!-- Title -->
-    <title>Project Cafecito - AI Business Automation Tools</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" type="image/png" href="/images/cafecito.png">
+    <title>Project Cafecito | Coffee-Fueled AI Products</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;700;800&display=swap');
+
         :root {
-            --charcoal-bg: #1d1d1d;
-            --espresso-dark: #4a3728;
-            --espresso: #4e392a;
-            --espresso-light: #6b4e31;
-            --warm-cream: #F5E8C7;
-            --arrow-thickness: 3;
+            --ink: #120b07;
+            --roast: #2e160b;
+            --espresso: #4b2b16;
+            --caramel: #c1813b;
+            --latte: #ead8bf;
+            --foam: #f5efe5;
+            --mint: #68dad3;
+            --shadow: rgba(10, 6, 4, 0.45);
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Quicksand', serif;
-            font-style: normal;            
+            margin: 0;
+            color: var(--foam);
+            background:
+                radial-gradient(circle at 15% 15%, rgba(193, 129, 59, 0.25), transparent 32%),
+                radial-gradient(circle at 85% 85%, rgba(104, 218, 211, 0.15), transparent 28%),
+                linear-gradient(145deg, #160d08 0%, #26150d 45%, #110804 100%);
+            font-family: 'Manrope', sans-serif;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .top-nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(14px);
+            background: rgba(18, 11, 7, 0.72);
+            border-bottom: 1px solid rgba(234, 216, 191, 0.16);
+        }
+
+        .top-nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 0;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-size: 0.92rem;
+        }
+
+        .nav-pill {
+            padding: 0.45rem 0.75rem;
+            border-radius: 999px;
+            border: 1px solid rgba(234, 216, 191, 0.26);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .nav-pill:hover {
+            transform: translateY(-1px);
+            background: rgba(234, 216, 191, 0.12);
+        }
+
+        .hero {
+            padding: 3.2rem 0 2.4rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 1.2rem;
+        }
+
+        .hero-copy,
+        .hero-visual {
+            border-radius: 24px;
+            border: 1px solid rgba(234, 216, 191, 0.2);
+            overflow: hidden;
+            box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-copy {
+            padding: 2rem;
+            background:
+                linear-gradient(170deg, rgba(193, 129, 59, 0.25), rgba(46, 22, 11, 0.6)),
+                #1f110a;
+            animation: riseIn 0.7s ease;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.74rem;
+            color: rgba(245, 239, 229, 0.75);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fraunces', serif;
+            margin: 0;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.45rem);
+            margin: 0.85rem 0 1rem;
+        }
+
+        .hero-copy p {
+            margin: 0;
+            color: rgba(245, 239, 229, 0.9);
+            max-width: 56ch;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            margin-top: 1.45rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 12px;
+            padding: 0.78rem 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(10, 6, 4, 0.45);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--caramel), #e6a14d);
+            color: #2a1308;
+        }
+
+        .btn-secondary {
+            background: rgba(245, 239, 229, 0.12);
+            color: var(--foam);
+            border: 1px solid rgba(245, 239, 229, 0.35);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 330px;
+            background:
+                linear-gradient(150deg, rgba(18, 11, 7, 0.3), rgba(18, 11, 7, 0.85)),
+                url('images/cafecito-banner.png') center/cover no-repeat;
+            animation: riseIn 0.9s ease;
+        }
+
+        .hero-visual .stamp {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            background: rgba(10, 6, 4, 0.68);
+            border: 1px solid rgba(234, 216, 191, 0.25);
+            border-radius: 12px;
+            padding: 0.55rem 0.7rem;
+            font-size: 0.86rem;
+        }
+
+        .section {
+            padding: 1rem 0 2.3rem;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: rgba(245, 239, 229, 0.72);
+            margin: 0;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.95rem;
+        }
+
+        .product {
+            background: rgba(30, 16, 10, 0.7);
+            border: 1px solid rgba(245, 239, 229, 0.16);
+            border-radius: 18px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 82px 1fr;
+            gap: 0.95rem;
+            align-items: center;
+            transform: translateY(12px);
+            opacity: 0;
+            animation: cardIn 0.55s ease forwards;
+        }
+
+        .product:nth-child(1) { animation-delay: 0.12s; }
+        .product:nth-child(2) { animation-delay: 0.2s; }
+        .product:nth-child(3) { animation-delay: 0.28s; }
+        .product:nth-child(4) { animation-delay: 0.36s; }
+
+        .product-icon {
+            width: 82px;
+            height: 82px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 1px solid rgba(245, 239, 229, 0.22);
+        }
+
+        .product h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.22rem 0.52rem;
+            border-radius: 999px;
+            margin-bottom: 0.45rem;
+            color: #1d0f08;
+            background: var(--caramel);
+        }
+
+        .product p {
+            margin: 0;
+            color: rgba(245, 239, 229, 0.84);
+            line-height: 1.45;
+            font-size: 0.95rem;
+        }
+
+        .about-wrap {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 1rem;
+        }
+
+        .about-card,
+        .contact-card {
+            border-radius: 18px;
+            border: 1px solid rgba(245, 239, 229, 0.16);
+            background: rgba(30, 16, 10, 0.72);
+            padding: 1.2rem;
+        }
+
+        .about-card p,
+        .contact-card p {
+            margin: 0;
+            color: rgba(245, 239, 229, 0.84);
+            line-height: 1.55;
+        }
+
+        .about-photo {
+            width: 100%;
+            border-radius: 14px;
+            margin-top: 1rem;
+            border: 1px solid rgba(245, 239, 229, 0.15);
+        }
+
+        .link-row {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .mini-link {
+            border-radius: 999px;
+            border: 1px solid rgba(245, 239, 229, 0.25);
+            padding: 0.44rem 0.76rem;
+            font-size: 0.88rem;
+            transition: background 0.2s ease;
+        }
+
+        .mini-link:hover {
+            background: rgba(245, 239, 229, 0.12);
+        }
+
+        .footer {
+            margin: 1rem 0 2rem;
+            color: rgba(245, 239, 229, 0.68);
+            text-align: center;
+            font-size: 0.88rem;
+        }
+
+        .footer-links {
+            margin-top: 0.7rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        @keyframes riseIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid,
+            .about-wrap,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 2.1rem;
+            }
+
+            .product {
+                grid-template-columns: 72px 1fr;
+            }
+
+            .product-icon {
+                width: 72px;
+                height: 72px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .top-nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 0.2rem;
+            }
+
+            .hero-copy,
+            .about-card,
+            .contact-card {
+                padding: 1rem;
+            }
         }
     </style>
     <script>
-        function submitToReddit() {
-            const title = encodeURIComponent(document.getElementById('post-title').value || 'Dude!');
-            const body = encodeURIComponent(document.getElementById('post-body').value || 'WTF');
+        function openRedditThread() {
+            const title = encodeURIComponent(document.getElementById('post-title').value || 'Cafecito feedback from a friendly internet stranger');
+            const body = encodeURIComponent(document.getElementById('post-body').value || 'Hi team, this is either praise, feature requests, or mild chaos.');
             const redditUrl = `https://old.reddit.com/r/projectcafecito/submit/?selftext=true&text=${body}&title=${title}&type=TEXT`;
             window.location.href = redditUrl;
         }
     </script>
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Project Cafecito",
-      "url": "https://cafecito.tech",
-      "logo": "https://cafecito.tech/images/cafecito.jpeg",
-      "description": "Project Cafecito builds AI tools to automate business tasks like billing and PR management.",
-      "founder": [
-        {
-          "@type": "Person",
-          "name": "Soumit Salman Rahman",
-          "sameAs": "https://www.linkedin.com/in/soumitsrahman"
-        },
-        {
-          "@type": "Person",
-          "name": "Daniel Oliver Vidaud",
-          "sameAs": "https://www.linkedin.com/in/dvidaud"
-        }
-      ],
-      "sameAs": [
-        "https://www.reddit.com/r/projectcafecito",
-        "https://github.com/soumitsalman"
-      ]
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Project Cafecito",
+        "url": "https://cafecito.tech",
+        "logo": "https://cafecito.tech/images/cafecito.png",
+        "description": "Project Cafecito builds practical AI tools for intelligence, automation, and operational workflows.",
+        "sameAs": [
+            "https://www.reddit.com/r/projectcafecito",
+            "https://github.com/soumitsalman"
+        ]
     }
     </script>
 </head>
-<body class="bg-[var(--charcoal-bg)] text-white">
-    <!-- Header Section -->
-    <header class="mx-3 py-4">
-        <div class="flex items-center justify-between">
-            <div id="cafecito_logo" class="flex items-center gap-3">
-                <div class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                    <img src="images/cafecito.png" class="icon-img rounded-md" alt="Cafecito Logo" />
-                </div>
-                <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-left">cafecito.tech</h1>
+<body>
+    <nav class="top-nav">
+        <div class="container top-nav-inner">
+            <a href="#top" class="brand" id="top">
+                <img src="images/cafecito.png" alt="Project Cafecito logo">
+                <span>Project Cafecito</span>
+            </a>
+            <div class="nav-links">
+                <a class="nav-pill" href="#products">Products</a>
+                <a class="nav-pill" href="https://developer.cafecito.tech">API</a>
+                <a class="nav-pill" href="#about">About</a>
+                <a class="nav-pill" href="#contact">Contact</a>
             </div>
-            <div id="contact_links" class="flex items-center justify-center gap-4">
-                <a href="https://www.reddit.com/r/projectcafecito" class="w-4 h-4 sm:w-6 sm:h-6 flex justify-center">
-                    <img src="images/reddit-orange.svg" class="icon-img" alt="Reddit" />
-                </a>
-                <a href="#" class="w-4 h-4 sm:w-6 sm:h-6 flex justify-center">
-                    <img src="images/discord-white.svg" class="icon-img" alt="Discord" />
-                </a>
-                <a href="https://github.com/soumitsalman" class="w-4 h-4 sm:w-6 sm:h-6 flex justify-center">
-                    <img src="images/github-white.svg" class="icon-img" alt="Github" />
-                </a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <article class="hero-copy">
+                <p class="eyebrow">Slightly Useful AI Products</p>
+                <h1>Automation with a caffeine budget and mild chaos tolerance.</h1>
+                <p>
+                    We build AI tools for people who do not have time for spreadsheet archaeology.
+                    We are not pretending to be a giant platform. We just ship practical systems,
+                    drink coffee, and fix the repetitive work humans should not have to do.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#products">See Product Lineup</a>
+                    <a class="btn btn-secondary" href="https://developer.cafecito.tech">Dive Into API</a>
+                </div>
+            </article>
+            <div class="hero-visual" role="img" aria-label="Coffee and AI visual for Project Cafecito">
+                <div class="stamp">No buzzwords were harmed. Some were lightly roasted.</div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] rounded-md mx-3 py-8">
-        <div id="cafecito_banner" class="container mx-auto text-center px-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Project Cafecito</h2>
-            <p class="text-base sm:text-lg md:text-xl mb-6">Because who has time for boring, repetitive business tasks?
-                We’re here to automate the nonsense so you can actually do your job.</p>
-            <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
-                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
-                    title="Tools">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current Products</h2>
+                <p>Yes, these are real. No, we still cannot fix your printer.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Features Section -->
-    <section id="products" class="mx-3 py-8">
-        <div class="container mx-auto px-4">
-            <h3 class="text-2xl sm:text-3xl font-bold text-center mb-12">Our Slightly Useful Tools</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
-                        <a href="https://espresso.cafecito.tech">
-                            <img src="images/espresso.png" class="rounded-md" alt="Espresso AI Tool Icon" />
-                        </a>
+            <div class="products">
+                <article class="product">
+                    <img class="product-icon" src="images/beans.png" alt="Beans product icon">
+                    <div>
+                        <span class="tag">API + MCP</span>
+                        <h3>Beans</h3>
+                        <p>News and blogs API with semantic search, filters, and MCP support for AI workflows.</p>
+                        <div class="link-row">
+                            <a class="mini-link" href="beans.html">Open Beans Page</a>
+                        </div>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Espresso (Alpha)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">An AI that sips the news and social media for you, so
-                        you can pretend to be in the know without the effort.</p>
-                </div>
-                <div class="text-center">
-                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
-                        <a href="#contact">
-                            <img src="images/medicafe.png" class="rounded-md" alt="Medi Cafe Billing Tool Icon" />
-                        </a>
+                </article>
+
+                <article class="product">
+                    <img class="product-icon" src="images/espresso.png" alt="Espresso product icon">
+                    <div>
+                        <span class="tag">Market Intelligence</span>
+                        <h3>Espresso</h3>
+                        <p>Curated market intelligence that helps teams track what matters and ignore hype noise.</p>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Medi Cafe (On Prem)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">Billing and payments for anesthesiologists. Because
-                        dealing with insurance is worse than a root canal.</p>
-                </div>
-                <div class="text-center">
-                    <div class="rounded-full w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 flex items-center justify-center">
-                        <a href="https://cortado.cafecito.tech">
-                            <img src="images/cortado.png" class="rounded-md" alt="Cortado PR Management Tool Icon" />
-                        </a>
+                </article>
+
+                <article class="product">
+                    <img class="product-icon" src="images/cortado.png" alt="Cortado product icon">
+                    <div>
+                        <span class="tag">Social Automation</span>
+                        <h3>Cortado</h3>
+                        <p>Social media automation for consistent posting, campaign hygiene, and less manual wrangling.</p>
                     </div>
-                    <h4 class="text-lg sm:text-xl font-semibold mb-2">Cortado (Soon-ish)</h4>
-                    <p class="text-gray-400 text-sm sm:text-base">PR and brand management AI. For when you want to look
-                        fancy online without hiring a publicist.</p>
-                </div>
-            </div>
-            <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
-                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
-                    title="Tools">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
+                </article>
+
+                <article class="product">
+                    <img class="product-icon" src="images/medicafe.png" alt="MediCafe product icon">
+                    <div>
+                        <span class="tag">Medical Ops</span>
+                        <h3>MediCafe</h3>
+                        <p>Medical billing automation focused on reducing operational friction and claim-processing pain.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="bg-gradient-to-t from-[var(--espresso)] to-[var(--espresso-light)] rounded-md mx-3 py-8">
-        <div class="container mx-auto px-4">
-            <h3 class="text-2xl sm:text-3xl font-bold text-center mb-4">About Our Mess</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 flex gap-8">                
-                <div class="sm:col-span-2 lg:col-span-4 xl:col-span-5">
-                    <p class="text-sm sm:text-base mb-4">
-                        Project Cafecito is the brainchild of <a href="https://www.linkedin.com/in/soumitsrahman" class="hover:text-[var(--warm-cream)]">Soumit Salman Rahman</a> and
-                        <a href="https://www.linkedin.com/in/dvidaud" class="hover:text-[var(--warm-cream)]">Daniel Oliver Vidaud</a>, two tech geeks who thought, “Why not make life easier for people who
-                        actually work for a living?” We're building AI tools to handle the soul-crushing parts of running a business. We’re a bootstrapped outfit - cause VCs can eat it.</p>
-                    <p class="text-sm sm:text-base">Soumit’s the guy who’s built some stuff for Microsoft and Aurora Innovation,
-                        while Daniel’s the aerospace nerd who made Boeing planes less chaotic. Together, we’re trying to
-                        save you from the horrors of paperwork and bad workflows. No promises, but we’re giving it a
-                        shot.</p>
+    <section class="section" id="about">
+        <div class="container about-wrap">
+            <article class="about-card">
+                <h2>About Us</h2>
+                <p>
+                    Project Cafecito is run by Soumit Salman Rahman and Daniel Oliver Vidaud.
+                    We started this because every team we worked with had the same problem:
+                    too much repetitive work and not enough time for the meaningful stuff.
+                </p>
+                <p style="margin-top: 0.8rem;">
+                    We are bootstrapped, experimental, and aggressively practical.
+                    If a feature does not help real workflows, we delete it and pretend we meant to do that all along.
+                </p>
+                <img class="about-photo" src="images/about-us.png" alt="Project Cafecito founders">
+            </article>
+
+            <article class="contact-card" id="contact">
+                <h2>Yell At Us Politely</h2>
+                <p>
+                    Got feedback, bug reports, or a brilliant idea you want us to build?
+                    Send it to our subreddit and we will read it between deploys and existential debugging.
+                </p>
+
+                <div style="margin-top: 1rem; display: grid; gap: 0.65rem;">
+                    <input id="post-title" type="text" placeholder="Post title" style="width: 100%; border-radius: 10px; border: 1px solid rgba(245,239,229,0.25); background: rgba(10,6,4,0.45); color: var(--foam); padding: 0.7rem 0.8rem;">
+                    <textarea id="post-body" rows="6" placeholder="Message body" style="width: 100%; border-radius: 10px; border: 1px solid rgba(245,239,229,0.25); background: rgba(10,6,4,0.45); color: var(--foam); padding: 0.7rem 0.8rem;"></textarea>
+                    <button type="button" class="btn btn-primary" onclick="openRedditThread()">Open Reddit Draft</button>
                 </div>
-                <div>
-                    <img src="images/about-us.png" alt="Project Cafecito Founders" class="rounded-lg shadow-lg">
+
+                <div class="link-row">
+                    <a class="mini-link" href="https://www.reddit.com/r/projectcafecito">Reddit</a>
+                    <a class="mini-link" href="https://github.com/soumitsalman">GitHub</a>
+                    <a class="mini-link" href="docs/about-us.md">About Notes</a>
                 </div>
-            </div>
-            <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
-                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
-                    title="Tools">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="mx-3 py-8">
-        <div class="container mx-auto px-4">
-            <h3 class="text-2xl sm:text-3xl font-bold text-center mb-12">Yell at Us</h3>
-            <div class="max-w-lg mx-auto">
-                <div class="space-y-4">
-                   <input id="post-title" type="text" placeholder="Complain, praise, or just say hi"
-                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base">
-                    <textarea id="post-body"
-                        placeholder="Cry us a river (We're not reading it anyway)"
-                        rows="5"
-                        class="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--warm-cream)] text-white text-sm sm:text-base"></textarea>
-                    <button onclick="submitToReddit()"
-                        class="w-full bg-[var(--espresso)] text-[var(--warm-cream)] p-3 rounded-lg font-semibold hover:bg-[var(--espresso-light)]">Send
-                        it!</button>
-                </div>
-            </div>
-            <div class="mt-8 flex justify-center">
-                <button onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' })"
-                    class="bg-[var(--espresso-light)] text-[var(--warm-cream)] hover:bg-[var(--warm-cream)] hover:text-[var(--espresso-light)] w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center "
-                    title="Tools">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--arrow-thickness)"
-                            d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-[var(--espresso)] rounded-md mx-3 py-4 mb-4">
-        <div class="container text-sm sm:text-base mx-auto text-center px-4">
-            <p>© 2025 Project Cafecito. We’re still here, somehow. All rights reserved.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/terms-of-use.md"
-                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Terms of Use</a>
-                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/privacy-policy.md"
-                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">Privacy Policy</a>
-                <a href="https://github.com/soumitsalman/cafecito/blob/main/docs/about-us.md"
-                    class="hover:text-[var(--warm-cream)] text-sm sm:text-base">About Us</a>
-            </div>
+    <footer class="footer container">
+        <div>© 2026 Project Cafecito. Still shipping. Still caffeinated.</div>
+        <div class="footer-links">
+            <a href="docs/terms-of-use.md">Terms</a>
+            <a href="docs/privacy-policy.md">Privacy</a>
+            <a href="docs/project-cafecito.md">Project Notes</a>
         </div>
     </footer>
 </body>
