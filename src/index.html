@@ -22,62 +22,10 @@
     <link rel="stylesheet" href="common.css">
     <title>Project Cafecito | Coffee-Fueled AI Products</title>
     <style>
-        .hero {
-            padding: 3.2rem 0 2.4rem;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 1.2rem;
-        }
-
         .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 1.2rem;
-        }
-
-        .hero-copy,
-        .hero-visual {
-            border-radius: 24px;
-            border: 1px solid rgba(234, 216, 191, 0.2);
-            overflow: hidden;
-            box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
-        }
-
-        .hero-copy {
-            padding: 2rem;
-            background:
-                linear-gradient(170deg, rgba(193, 129, 59, 0.25), rgba(46, 22, 11, 0.6)),
-                #1f110a;
-            animation: riseIn 0.7s ease;
-        }
-
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.74rem;
-            color: rgba(245, 239, 229, 0.75);
-        }
-
-        h1 {
-            font-size: clamp(2rem, 6vw, 3.45rem);
-            margin: 0.85rem 0 1rem;
-        }
-
-        .hero-copy p {
-            margin: 0;
-            color: rgba(245, 239, 229, 0.9);
-            max-width: 56ch;
-            line-height: 1.6;
-        }
-
-        .hero-actions {
-            margin-top: 1.45rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
         }
 
         .btn {
@@ -104,26 +52,6 @@
             background: rgba(245, 239, 229, 0.12);
             color: var(--foam);
             border: 1px solid rgba(245, 239, 229, 0.35);
-        }
-
-        .hero-visual {
-            position: relative;
-            min-height: 330px;
-            background:
-                linear-gradient(150deg, rgba(18, 11, 7, 0.3), rgba(18, 11, 7, 0.85)),
-                url('images/cafecito-banner.png') center/cover no-repeat;
-            animation: riseIn 0.9s ease;
-        }
-
-        .hero-visual .stamp {
-            position: absolute;
-            right: 1rem;
-            bottom: 1rem;
-            background: rgba(10, 6, 4, 0.68);
-            border: 1px solid rgba(234, 216, 191, 0.25);
-            border-radius: 12px;
-            padding: 0.55rem 0.7rem;
-            font-size: 0.86rem;
         }
 
         .about-copy,
@@ -199,17 +127,11 @@
         }
 
         @media (max-width: 960px) {
-            .hero-grid,
             .about-grid {
                 grid-template-columns: 1fr;
             }
-
-            .hero {
-                padding-top: 2.1rem;
-            }
         }
         @media (max-width: 620px) {
-            .hero-copy,
             .about-card,
             .contact-card {
                 padding: 1rem;
@@ -246,7 +168,10 @@
                 <img src="images/cafecito.png" alt="Project Cafecito logo">
                 <span>Project Cafecito</span>
             </a>
-            <div class="nav-links">
+            <button class="hamburger navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle menu">
+                ☰
+            </button>
+            <div class="nav-links" id="site-nav">
                 <a class="nav-pill" href="#products">Products</a>
                 <a class="nav-pill" href="https://developer.cafecito.tech">API</a>
                 <a class="nav-pill" href="#about">About</a>
@@ -255,24 +180,36 @@
         </div>
     </nav>
 
+    <div class="offcanvas offcanvas-top mobile-nav-drawer" tabindex="-1" id="mobile-nav" aria-labelledby="mobile-nav-label">
+        <div class="mobile-nav-header">
+            <h2 id="mobile-nav-label">Menu</h2>
+            <button class="mobile-nav-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close menu">✕</button>
+        </div>
+        <div class="mobile-nav-body">
+            <a class="nav-pill" href="#products" data-bs-dismiss="offcanvas">Products</a>
+            <a class="nav-pill" href="https://developer.cafecito.tech" data-bs-dismiss="offcanvas">API</a>
+            <a class="nav-pill" href="#about" data-bs-dismiss="offcanvas">About</a>
+            <a class="nav-pill" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+        </div>
+    </div>
+
     <header class="hero">
-        <div class="container hero-grid">
-            <article class="hero-copy">
-                <p class="eyebrow">Slightly Useful AI Products</p>
-                <h1>Automation with a caffeine budget and mild chaos tolerance.</h1>
-                <p>
-                    We build AI tools for people who do not have time for spreadsheet archaeology.
-                    We are not pretending to be a giant platform. We just ship practical systems,
-                    drink coffee, and fix the repetitive work humans should not have to do.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#products">See Product Lineup</a>
-                    <a class="btn btn-secondary" href="https://developer.cafecito.tech">Dive Into API</a>
-                </div>
-            </article>
-            <div class="hero-visual" role="img" aria-label="Coffee and AI visual for Project Cafecito">
-                <div class="stamp">No buzzwords were harmed. Some were lightly roasted.</div>
-            </div>
+        <div class="container">
+            <section class="hero-frame hero-frame--cafecito" role="img" aria-label="Coffee and AI visual for Project Cafecito">
+                <article class="hero-copy">
+                    <p class="eyebrow">Slightly Useful AI Products</p>
+                    <h1>Automation with a caffeine budget and mild chaos tolerance.</h1>
+                    <p>
+                        We build AI tools for people who do not have time for spreadsheet archaeology.
+                        We are not pretending to be a giant platform. We just ship practical systems,
+                        drink coffee, and fix the repetitive work humans should not have to do.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#products">See Product Lineup</a>
+                        <a class="btn btn-secondary" href="https://developer.cafecito.tech">Dive Into API</a>
+                    </div>
+                </article>
+            </section>
         </div>
     </header>
 
@@ -351,5 +288,6 @@
             <a href="docs/project-cafecito.md">Project Notes</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

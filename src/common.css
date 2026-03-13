@@ -60,6 +60,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
     padding: 0.9rem 0;
     gap: 1rem;
 }
@@ -96,6 +97,113 @@ a {
 .nav-pill:hover {
     transform: translateY(-1px);
     background: rgba(234, 216, 191, 0.12);
+}
+
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid rgba(234, 216, 191, 0.35);
+    border-radius: 10px;
+    color: var(--foam);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 0;
+}
+
+.offcanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1045;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: min(420px, 82vh);
+    visibility: hidden;
+    background: rgba(18, 11, 7, 0.97);
+    border-bottom: 1px solid rgba(234, 216, 191, 0.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    transform: translateY(-100%);
+    transition: transform 0.32s ease-in-out, visibility 0s linear 0.32s;
+}
+
+.offcanvas.offcanvas-top {
+    bottom: auto;
+}
+
+.offcanvas.showing,
+.offcanvas.show {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.32s ease-in-out;
+}
+
+.offcanvas-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.offcanvas-backdrop.fade {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 1;
+}
+
+.mobile-nav-drawer {
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+}
+
+.mobile-nav-header h2 {
+    font-size: 1.1rem;
+}
+
+.mobile-nav-close {
+    border: 1px solid rgba(234, 216, 191, 0.35);
+    background: transparent;
+    color: var(--foam);
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.mobile-nav-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.mobile-nav-body .nav-pill {
+    width: 100%;
+    text-align: left;
+    padding: 0.65rem 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .offcanvas,
+    .offcanvas-backdrop.fade {
+        transition: none;
+    }
 }
 
 .shared-panel {
@@ -168,6 +276,64 @@ a {
 
 .section {
     padding: 1rem 0;
+}
+
+.hero {
+    padding: 3.2rem 0 2.4rem;
+}
+
+.hero-frame {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    border-radius: 24px;
+    border: 1px solid rgba(234, 216, 191, 0.2);
+    overflow: hidden;
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-frame--cafecito {
+    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('images/cafecito-banner.png') center/cover no-repeat;
+}
+
+.hero-frame--beans {
+    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('images/beans-banner.png') center/cover no-repeat;
+}
+
+.hero-copy {
+    background: transparent;
+    border: none;
+    overflow: visible;
+    padding: 2rem;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: riseIn 0.7s ease forwards;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.74rem;
+    color: rgba(245, 239, 229, 0.75);
+}
+
+.hero-copy h1 {
+    font-size: clamp(2rem, 6vw, 3.45rem);
+    margin: 0.85rem 0 1rem;
+}
+
+.hero-copy p {
+    margin: 0;
+    color: rgba(245, 239, 229, 0.9);
+    max-width: 56ch;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    margin-top: 1.45rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
 }
 
 .section--spacious {
@@ -309,14 +475,26 @@ a {
 
 @media (max-width: 620px) {
     .top-nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: inline-flex;
     }
 
     .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.2rem;
+        display: none;
+    }
+}
+
+@media (min-width: 621px) {
+    .nav-links {
+        display: flex;
+    }
+
+    .offcanvas {
+        display: none;
     }
 }
 
@@ -340,6 +518,12 @@ a {
     .product-icon {
         width: 72px;
         height: 72px;
+    }
+}
+
+@media (max-width: 620px) {
+    .hero-copy {
+        padding: 1rem;
     }
 }
 
