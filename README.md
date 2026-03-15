@@ -1,6 +1,6 @@
 # Project Cafecito
 
-![Project Cafecito Logo](src/images/cafecito-dark-v2.png)
+![Project Cafecito Logo](src/images/cafecito-banner.png)
 
 **Revolutionizing Productivity for Independent Professionals and Micro Businesses**
 
