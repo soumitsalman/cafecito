@@ -1,0 +1,46 @@
+name: General Contact
+description: Have a question about our company, products, pricing, or anything else? We'd love to hear from you! Use this form to reach out.
+title: "[Contact]: "
+labels: ["contact"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reaching out! Please provide as much detail as possible so we can assist you better. We're here to help with questions about our company, products, pricing, release timelines, feature requests, product requests, engagement opportunities, or anything else on your mind.
+  - type: dropdown
+    id: category
+    attributes:
+      label: What is your question about?
+      description: Select the category that best fits your inquiry.
+      options:
+        - Company
+        - Partnerships
+        - Products
+        - Features
+        - Timeline
+        - Pricing
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Please describe your question or request in detail
+      description: Share more about what you're asking. The more information you provide, the better we can help!
+      placeholder: "For example: I'm interested in learning more about your AI chat features and how they integrate with our system."
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Your contact information (optional)
+      description: If you'd like us to follow up, please provide your email or preferred contact method.
+      placeholder: "e.g., email@example.com or @yourusername"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms and Conditions
+      description: By submitting this form, you agree to our [Terms of Service](https://example.com/terms) and [Privacy Policy](https://example.com/privacy).
+      options:
+        - label: I agree to the Terms and Conditions
+          required: true
