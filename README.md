@@ -39,7 +39,7 @@ An AI agent for knowledge workers and consultants.
 
 Espresso aggregates news and social media content, helping you stay informed on industry trends and media buzz. Available as a web service.
 
-**Visit**: [Espresso Web Service](https://espresso.cafecito.tech)
+**Visit**: [Espresso Publications](https://espresso.cafecito.tech)
 
 ---
 
@@ -84,8 +84,7 @@ At Project Cafecito, we're constantly exploring new ideas and creating innovativ
 
 - **API Documentation**: [developer.cafecito.tech](https://developer.cafecito.tech)
 - **GitHub**: [soumitsalman/cafecito](https://github.com/soumitsalman/cafecito)
-- **Community**: [r/projectcafecito](https://www.reddit.com/r/projectcafecito)
 
 ---
 
-© 2026 Project Cafecito. Still shipping. Still caffeinated.
+© 2024-2026 Project Cafecito. All Rights Reserved.
