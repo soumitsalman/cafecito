@@ -1,12 +1,12 @@
 name: General Contact
 description: Have a question about our company, products, pricing, or anything else? We'd love to hear from you! Use this form to reach out.
 title: "[Contact]: "
-labels: ["contact"]
+labels: ["contact", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reaching out! Please provide as much detail as possible so we can assist you better. We're here to help with questions about our company, products, pricing, release timelines, feature requests, product requests, engagement opportunities, or anything else on your mind.
+        Thank you for reaching out! Please provide as much detail as possible so we can assist you better. We're here to help with questions about our company, products, pricing, release timelines, feature requests, product requests, engagement opportunities, or anything else on your mind. If you just want to yell at us, that's fine too! We look forward to hearing from you.
   - type: dropdown
     id: category
     attributes:
@@ -34,13 +34,7 @@ body:
     id: contact
     attributes:
       label: Your contact information (optional)
-      description: If you'd like us to follow up, please provide your email or preferred contact method.
-      placeholder: "e.g., email@example.com or @yourusername"
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Terms and Conditions
-      description: By submitting this form, you agree to our [Terms of Service](https://example.com/terms) and [Privacy Policy](https://example.com/privacy).
-      options:
-        - label: I agree to the Terms and Conditions
-          required: true
+      description: If you'd like us to follow up directly, please provide your email (In absence of an email, we will respond here on GitHub).
+      placeholder: "e.g., email@example.com"
+    validations:
+      required: false
