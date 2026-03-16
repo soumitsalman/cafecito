@@ -76,7 +76,7 @@ At Project Cafecito, we're constantly exploring new ideas and creating innovativ
 
 - [Terms of Use](/docs/terms-of-use.md)
 - [Privacy Policy](/docs/privacy-policy.md)
-- [Contact Us](https://github.com/soumitsalman/cafecito/issues/new/new?template=general_contact)
+- [Contact Us](https://github.com/soumitsalman/cafecito/issues/new?template=general_contact.yml)
 
 ---
 
