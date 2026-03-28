@@ -1,0 +1,30 @@
+<nav class="top-nav">
+    <div class="container top-nav-inner">
+        <a href="{{ '/' | relative_url }}" class="brand">
+            <img src="{{ '/assets/images/cafecito.png' | relative_url }}" alt="Project Cafecito logo">
+            <span>Project Cafecito</span>
+        </a>
+        <button class="hamburger navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle menu">
+            ☰
+        </button>
+        <div class="nav-links" id="site-nav">
+            <a class="nav-pill" href="{{ '/' | relative_url }}#products">Products</a>
+            <a class="nav-pill" href="https://developer.cafecito.tech">API</a>
+            <a class="nav-pill" href="{{ '/' | relative_url }}#about">About</a>
+            <a class="nav-pill" href="https://github.com/soumitsalman/cafecito/issues/new?template=general_contact.yml"><i data-lucide="message-square" class="icon-badge" aria-hidden="true"></i>Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-top mobile-nav-drawer" tabindex="-1" id="mobile-nav" aria-labelledby="mobile-nav-label">
+    <div class="mobile-nav-header">
+        <h2 id="mobile-nav-label">Menu</h2>
+        <button class="mobile-nav-close" type="button" data-bs-dismiss="offcanvas" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-nav-body">
+        <a class="nav-pill" href="{{ '/' | relative_url }}#products">Products</a>
+        <a class="nav-pill" href="https://developer.cafecito.tech">API</a>
+        <a class="nav-pill" href="{{ '/' | relative_url }}#about">About</a>
+        <a class="nav-pill" href="https://github.com/soumitsalman/cafecito/issues/new?template=general_contact.yml"><i data-lucide="message-square" class="icon-badge" aria-hidden="true"></i>Contact</a>
+    </div>
+</div>

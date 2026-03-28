@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Privacy Policy | Project Cafecito"
+description: "Privacy policy for Project Cafecito services."
+---
+
 # Privacy Policy
 
 **Effective Date:** September 16, 2024

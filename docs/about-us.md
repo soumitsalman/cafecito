@@ -1,3 +1,9 @@
+---
+layout: default
+title: "About Us | Project Cafecito"
+description: "Learn about the founders and mission of Project Cafecito."
+---
+
 # About Us
 
 **Project Cafecito** was founded by two tech industry veterans, **Soumit Salman Rahman** and **Daniel Oliver Vidaud**, who combined their diverse expertise and vision to create innovative, cost-optimized technology solutions that empower independent professionals and micro-businesses.

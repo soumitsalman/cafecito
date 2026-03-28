@@ -1,0 +1,122 @@
+---
+layout: default
+title: "Project Cafecito | Coffee-Fueled AI Products"
+description: "Project Cafecito builds coffee-fueled AI products for news intelligence, market analysis, social automation, and medical billing workflows."
+keywords: "AI automation, news API, market intelligence, social media automation, medical billing automation, Project Cafecito"
+image: "https://cafecito.tech/images/cafecito-banner.png"
+og_url: "https://cafecito.tech"
+canonical: "https://cafecito.tech"
+robots: "index, follow"
+page_css: "/assets/css/index.css"
+---
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Project Cafecito",
+    "url": "https://cafecito.tech",
+    "logo": "https://cafecito.tech/images/cafecito.png",
+    "description": "Project Cafecito builds practical AI tools for intelligence, automation, and operational workflows.",
+    "sameAs": [
+        "https://www.reddit.com/r/projectcafecito",
+        "https://github.com/soumitsalman"
+    ]
+}
+</script>
+
+<header class="hero">
+    <div class="container">
+        <section class="hero-frame hero-frame--cafecito" role="img" aria-label="Coffee and AI visual for Project Cafecito">
+            <article class="hero-copy">
+                <p class="eyebrow">Practical AI & Tools for Small Business</p>
+                <h1>Automation for Business Owners</h1>
+                <h4>Who'd rather do real work instead of mind-numbing admin.</h4>
+                <p>                        
+                    We build simple, API-first AI tools and workflows that eliminate repetitive back-office tasks for small and micro businesses. 
+                    No bloated platforms — just practical systems that ship fast, drink coffee with you, and free you to focus on the work you actually enjoy.
+                    Automation that fits your caffeine budget and chaos tolerance.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#products">See Product Lineup</a>
+                    <a class="btn btn-secondary" href="https://developer.cafecito.tech">Dive Into API</a>
+                </div>
+            </article>
+        </section>
+    </div>
+</header>
+
+<section class="section section--spacious" id="products">
+    <div class="container">
+        <div class="section-title">
+            <h2>Products</h2>
+            <p>Yes, these are real. No, we still cannot fix your printer.</p>
+        </div>
+
+        <div class="products">
+            <article class="product shared-panel shared-panel--interactive product--clickable">
+                <a class="product-link-overlay" href="{{ '/beans.html' | relative_url }}" aria-label="Open Beans"></a>
+                <img class="product-icon" src="{{ '/assets/images/beans.png' | relative_url }}" alt="Beans product icon">
+                <div>
+                    <span class="tag shared-badge shared-badge--caramel">News API</span>
+                    <h3>Beans</h3>
+                    <p>News & blog aggregator API with semantic search, smart filters, and MCP support — so your AI workflows stay fed with relevant information, not noise.</p>
+                </div>
+            </article>
+
+            <article class="product shared-panel shared-panel--interactive product--clickable">
+                <a class="product-link-overlay" href="https://espresso.cafecito.tech" aria-label="Open Espresso"></a>
+                <img class="product-icon" src="{{ '/assets/images/espresso.png' | relative_url }}" alt="Espresso product icon">
+                <div>
+                    <span class="tag shared-badge shared-badge--caramel">Publications</span>
+                    <h3>Espresso</h3>
+                    <p>Curated market intelligence that cuts through the hype. Track what actually matters for your business in one concentrated shot.</p>
+                </div>
+            </article>
+
+            <article class="product shared-panel">
+                <img class="product-icon" src="{{ '/assets/images/cortado.png' | relative_url }}" alt="Cortado product icon">
+                <div>
+                    <span class="tag shared-badge shared-badge--caramel">Social Automation</span>
+                    <h3>Cortado</h3>
+                    <p>Social media automation that keeps your posting consistent, campaigns clean, and your manual wrangling to a minimum.</p>
+                </div>
+            </article>
+
+            <article class="product shared-panel">
+                <img class="product-icon" src="{{ '/assets/images/medicafe.png' | relative_url }}" alt="MediCafe product icon">
+                <div>
+                    <span class="tag shared-badge shared-badge--caramel">Medical Ops</span>
+                    <h3>MediCafe</h3>
+                    <p>Medical billing automation that reduces claim denials, paperwork friction, and the operational headaches that eat into your practice time.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section section--spacious" id="about">
+    <div class="container">
+        <article class="about-copy">
+            <h2>About Us</h2>
+            <p>
+                Project Cafecito is run by <a href="https://www.linkedin.com/in/soumitsrahman/">Soumit Salman Rahman</a> and <a href="https://www.linkedin.com/in/dvidaud/">Daniel Oliver Vidaud</a>.
+                We started this because every team we worked with had the same problem:
+                too much repetitive work and not enough time for the meaningful stuff.
+            </p>
+            <p style="margin-top: 0.8rem;">
+                We are bootstrapped, experimental, and aggressively practical.
+                If a feature does not help real workflows, we delete it and pretend we meant to do that all along.
+            </p>
+        </article>
+    </div>
+</section>
+
+<script>
+    function openRedditThread() {
+        const title = encodeURIComponent(document.getElementById('post-title').value || 'Cafecito feedback from a friendly internet stranger');
+        const body = encodeURIComponent(document.getElementById('post-body').value || 'Hi team, this is either praise, feature requests, or mild chaos.');
+        const redditUrl = `https://old.reddit.com/r/projectcafecito/submit/?selftext=true&text=${body}&title=${title}&type=TEXT`;
+        window.location.href = redditUrl;
+    }
+</script>
