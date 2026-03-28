@@ -1,0 +1,88 @@
+.btn {
+    border: 0;
+    border-radius: 12px;
+    padding: 0.78rem 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(10, 6, 4, 0.45);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--caramel), #e6a14d);
+    color: #2a1308;
+}
+
+.btn-secondary {
+    background: rgba(245, 239, 229, 0.12);
+    color: var(--foam);
+    border: 1px solid rgba(245, 239, 229, 0.35);
+}
+
+.about-copy {
+    padding: 2rem;
+    background: linear-gradient(150deg, rgba(18, 11, 7, 0.3), rgba(18, 11, 7, 0.85));
+    animation: riseIn 0.7s ease;
+    border-radius: 24px;
+    border: 1px solid rgba(234, 216, 191, 0.2);
+    overflow: hidden;
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
+}
+
+.about-card,
+.contact-card {
+    border-radius: 18px;
+    border: 1px solid rgba(245, 239, 229, 0.16);
+    background: rgba(30, 16, 10, 0.72);
+    padding: 1.2rem;
+}
+
+.about-card p,
+.contact-card p {
+    margin: 0;
+    color: rgba(245, 239, 229, 0.84);
+    line-height: 1.55;
+}
+
+.link-row {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.mini-link {
+    border-radius: 999px;
+    border: 1px solid rgba(245, 239, 229, 0.25);
+    padding: 0.44rem 0.76rem;
+    font-size: 0.88rem;
+    transition: background 0.2s ease;
+}
+
+.mini-link:hover {
+    background: rgba(245, 239, 229, 0.12);
+}
+
+.icon-badge {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+    flex-shrink: 0;
+    margin-right: 0.4rem;
+}
+
+@media (max-width: 620px) {
+    .about-card,
+    .contact-card {
+        padding: 1rem;
+    }
+}
+
+.product--clickable {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

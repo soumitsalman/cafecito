@@ -298,11 +298,11 @@ a:hover {
 }
 
 .hero-frame--cafecito {
-    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('images/cafecito-banner.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('/assets/images/cafecito-banner.png') center/cover no-repeat;
 }
 
 .hero-frame--beans {
-    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('images/beans-banner.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(18, 11, 7, 0.9), rgba(46, 22, 11, 0.92)), url('/assets/images/beans-banner.png') center/cover no-repeat;
 }
 
 .hero-copy {

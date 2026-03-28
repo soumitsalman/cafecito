@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Terms of Use | Project Cafecito"
+description: "Terms of use for Project Cafecito services."
+---
+
 # Terms of Service
 
 **Effective Date:** September 16, 2024
