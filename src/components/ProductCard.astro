@@ -1,0 +1,39 @@
+---
+import type { Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const externalAttrs = (link: Product['links'][number]) => link.external ? { target: '_blank', rel: 'noreferrer' } : {};
+---
+
+<article class={`product-catalog-card shared-panel ${product.status === 'live' ? 'product-catalog-card--live' : ''}`}>
+  <div class="product-catalog-card-header">
+    <img class="product-catalog-icon" src={product.image} alt={`${product.name} product icon`} />
+    <div>
+      <span class={`shared-badge ${product.status === 'live' ? 'shared-badge--mint' : 'shared-badge--subtle'}`}>
+        {product.statusLabel}
+      </span>
+      <p class="product-catalog-category">{product.category}</p>
+    </div>
+  </div>
+  <h3>{product.name}</h3>
+  <p class="product-catalog-description">{product.description}</p>
+  <dl class="product-catalog-details">
+    <div>
+      <dt>Best for</dt>
+      <dd>{product.audience}</dd>
+    </div>
+    <div>
+      <dt>Capabilities</dt>
+      <dd>{product.capabilities.join(' · ')}</dd>
+    </div>
+  </dl>
+  {product.links.length > 0 && (
+    <div class="product-catalog-links">
+      {product.links.map((link) => <a href={link.href} {...externalAttrs(link)}>{link.label}<span aria-hidden="true"> ↗</span></a>)}
+    </div>
+  )}
+</article>

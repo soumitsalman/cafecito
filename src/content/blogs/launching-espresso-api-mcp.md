@@ -1,6 +1,6 @@
 ---
 title: "Launching Espresso API & MCP"
-description: "Curated business intelligence for AI agents, dashboards, automated briefings, and RAG pipelines."
+description: "Curated market intelligence for AI agents, dashboards, automated briefings, and RAG pipelines."
 publishedAt: 2026-06-30
 type: announcement
 tags: ["espresso", "api", "mcp", "business-intelligence", "agents"]

@@ -11,13 +11,25 @@ const features = [
   ['🤖 MCP-Friendly', 'Return structured JSON or flat plain text with response_type=text. Lower token cost for MCP tools and LLM workflows that do not need JSON syntax.'],
   ['📰 Publications Layer', 'Human-readable editorials and social digests on the same intelligence stack. Read curated analysis on the web, X, and Threads — or wire the API into your own tools.'],
 ];
+const espressoSchema = {
+  "@type": "SoftwareApplication",
+  "@id": "https://cafecito.tech/espresso/#software",
+  name: "Espresso",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: "Live market intelligence suite combining API and MCP access with event digests, synthesized signals, tags, relationships, and publications.",
+  url: "https://cafecito.tech/espresso/",
+  provider: { "@id": "https://cafecito.tech/#organization" },
+  featureList: features.map(([title]) => title),
+};
 ---
 
 <BaseLayout
   title="Espresso | Project Cafecito"
-  description="Curated business intelligence — API, publications, event digests, and synthesized signals for dashboards, monitoring, and AI agents."
+  description="Curated market intelligence — API, publications, event digests, and synthesized signals for dashboards, monitoring, and AI agents."
   image="https://cafecito.tech/images/espresso-banner.png"
-  keywords="Espresso API, business intelligence, market intelligence, event digests, signals, MCP, Project Cafecito"
+  keywords="Espresso API, market intelligence, market intelligence, event digests, signals, MCP, Project Cafecito"
+  jsonLd={espressoSchema}
 >
   <Nav />
   <header class="hero" id="what-is-espresso">
@@ -25,7 +37,7 @@ const features = [
       <section class="hero-frame hero-frame--espresso">
         <article class="hero-copy">
           <p class="eyebrow">Project Cafecito / Espresso</p>
-          <h1>Business Intelligence Suite</h1>
+          <h1>Market Intelligence Suite for AI Workflows</h1>
           <p>Espresso is part of a larger product suite that includes the Espresso API and Espresso Publications (editorials, X, Threads) — curated digests and deeper human-readable analysis built on the same high-signal intelligence layer. Think of it as concentrated shots of structured intelligence: event digests, synthesized signals, tags, and relationships — served fresh for dashboards, monitoring workflows, and AI agents.</p>
           <div class="hero-badges">
             <span class="shared-badge">MCP</span><span class="shared-badge">JSON</span><span class="shared-badge">Semantic Search</span><span class="shared-badge">Events &amp; Signals</span><span class="shared-badge shared-badge--ghost-mint">v0.1 | Live</span>
@@ -36,14 +48,14 @@ const features = [
   </header>
   <main class="container">
     <section class="section" id="why-espresso">
-      <div class="section-title"><h2>Why Espresso</h2></div>
+      <div class="section-title"><h2>Why Espresso</h2><p>Use Espresso when you need curated, connected intelligence for research, monitoring, briefings, and business decisions.</p></div>
       <div class="grid">{features.map(([title, text]) => <article class="card shared-panel"><h3>{title}</h3><p>{text}</p></article>)}</div>
     </section>
     <section class="section" id="get-espresso">
-      <div class="section-title"><h2>Get Started</h2></div>
+      <div class="section-title"><h2>Get Started</h2><p>Choose the live interface that fits your workflow: API and MCP access for systems, or publications for human-readable analysis.</p></div>
       <div class="products products--no-media">
-        <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/espresso-howto" aria-label="Open Espresso API"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3>🔌 API &amp; MCP</h3><p>Full endpoint reference, authentication, filtering, and examples. Ready to integrate Espresso into your app or agent.</p></div></article>
-        <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://espresso.cafecito.tech" aria-label="Open Espresso Publications"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3>📰 Publications</h3><p>Curated editorials and digests on the web. Deeper human-readable analysis built on the same intelligence layer.</p></div></article>
+        <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/espresso-howto" aria-label="Read the Espresso API documentation"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3>🔌 API &amp; MCP</h3><p>Full endpoint reference, authentication, filtering, and examples for integrating Espresso into a dashboard, monitoring workflow, RAG pipeline, or agent.</p></div></article>
+        <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://espresso.cafecito.tech" aria-label="Read Espresso Publications"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3>📰 Publications</h3><p>Curated editorials and digests on the web. Deeper human-readable analysis built on the same intelligence layer.</p></div></article>
         <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://x.com/espressovibz" aria-label="Open Espresso on X"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3 class="product-heading-with-icon"><img src="https://x.com/favicon.ico" alt="" class="heading-favicon" width="22" height="22" loading="lazy" />X</h3><p>Daily shots of curated insights on tech, startups, and market trends. Follow for concentrated intelligence in your feed.</p></div></article>
         <article class="product shared-panel shared-panel--interactive"><a class="product-link-overlay" href="https://www.threads.com/@espresso.sips" aria-label="Open Espresso on Threads"></a><div><span class="tag shared-badge shared-badge--mint">Live</span><h3 class="product-heading-with-icon"><img src="https://static.cdninstagram.com/rsrc.php/y4/r/pctUncuduBn.svg" alt="" class="heading-favicon" width="22" height="22" loading="lazy" />Threads</h3><p>Short-form digests and signal highlights on Threads. Same high-signal layer, served for casual reading.</p></div></article>
       </div>

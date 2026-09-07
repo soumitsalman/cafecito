@@ -14,7 +14,7 @@ We leverage the power of artificial intelligence to develop productivity tools a
 
 ## Our Products
 
-### 🫘 Beans — News & Blogs API
+### 🫘 Beans — News API
 Think of it as your content firehose with better manners.
 
 Beans is our aggregation and search service for news and blogs. It supports semantic query search, practical filtering, and clean JSON output.
@@ -32,31 +32,25 @@ Beans is our aggregation and search service for news and blogs. It supports sema
 
 ---
 
-### ☕ Espresso (Alpha)
-An AI agent for knowledge workers and consultants.
+### ☕ Espresso — Market Intelligence Suite
+A live market intelligence suite for developers, analysts, dashboards, and AI agents.
 
-Espresso aggregates news and social media content, helping you stay informed on industry trends and media buzz. Available as a web service.
+Espresso combines the API and MCP with event digests, synthesized signals, tags, relationships, and human-readable publications.
+
 
 **Visit**: [Espresso Publications](https://espresso.cafecito.tech)
 
 ---
 
-### 💉 Medi Cafe (Alpha)
-An on-premises software solution tailored for independent anesthesiologists.
+### 💉 MediCafe (In development)
+A planned medical operations product for independent practices.
 
-Medi Cafe simplifies insurance billing and payment processing, allowing you to focus on patient care without the administrative headache.
-
----
-
-### 🎯 Cortado (Coming Soon)
-A powerful AI agent for online PR and brand management, tailored specifically for consultants and micro-businesses in the knowledge services sector. Cortado helps you build and maintain a strong digital presence effortlessly.
+MediCafe is not yet available; its intended focus is reducing repetitive billing and paperwork workflows.
 
 ---
 
-### ☕ Cappuccino (Coming Soon)
-Your personal assistant for consulting and temporary gig opportunities.
-
-Cappuccino scours social media, job sites, and federal networks to find the perfect matches for your skills and expertise. Available as a web service.
+### 🎯 Cortado (In development)
+A planned social media automation product for consistent posting and cleaner campaign workflows. Cortado is not yet available.
 
 ---
 
@@ -80,6 +74,8 @@ At Project Cafecito, we're constantly exploring new ideas and creating innovativ
 
 ## Resources
 
+- **Product lineup**: [cafecito.tech/products](https://cafecito.tech/products/)
+- **AI-readable catalog**: [cafecito.tech/llms.txt](https://cafecito.tech/llms.txt)
 - **API Documentation**: [developer.cafecito.tech](https://developer.cafecito.tech)
 - **GitHub**: [soumitsalman/cafecito](https://github.com/soumitsalman/cafecito)
 

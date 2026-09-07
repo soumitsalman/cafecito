@@ -11,6 +11,17 @@ const features = [
   ['🏷️ Built-in AI Enrichment', 'Automatic extraction of named entities, sentiment, topics, and regions for every article. Ready for analytics dashboards, AI agents, and downstream pipelines — no extra processing layers required.'],
   ['🔗 Story Propagation Mapping', 'Automatically links related articles across thousands of publishers. Track how stories spread from niche sources to mainstream outlets and observe narrative shifts in real time.'],
 ];
+const beansSchema = {
+  "@type": "SoftwareApplication",
+  "@id": "https://cafecito.tech/beans/#software",
+  name: "Beans",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: "Live news and blogs aggregation API with semantic search, structured filtering, JSON, and MCP support.",
+  url: "https://cafecito.tech/beans/",
+  provider: { "@id": "https://cafecito.tech/#organization" },
+  featureList: features.map(([title]) => title),
+};
 ---
 
 <BaseLayout
@@ -18,6 +29,7 @@ const features = [
   description="Curated news and blogs with semantic search, rich filtering, and clean JSON endpoints."
   image="https://cafecito.tech/images/beans-banner.png"
   keywords="Beans API, news API, blog API, vector search, MCP, Project Cafecito"
+  jsonLd={beansSchema}
 >
   <Nav />
   <header class="hero" id="what-is-beans">
@@ -25,10 +37,10 @@ const features = [
       <section class="hero-frame hero-frame--beans">
         <article class="hero-copy">
           <p class="eyebrow">Project Cafecito / Beans</p>
-          <h1>News &amp; Blogs API</h1>
-          <p>Beans is our aggregation and search service for news and blogs. It supports semantic query search, practical filtering, and clean JSON output. Think of it as your content firehose with better manners.</p>
+          <h1>News &amp; Blogs API for AI Workflows</h1>
+          <p>Beans is a live news and blog aggregation API for developers, AI agents, RAG pipelines, research tools, and dashboards. Use semantic search, structured filters, and JSON or MCP responses to find relevant source content without building a publisher-crawling pipeline.</p>
           <div class="hero-badges">
-            <span class="shared-badge">MCP</span><span class="shared-badge">JSON</span><span class="shared-badge">Vector</span><span class="shared-badge">Free Tier</span><span class="shared-badge shared-badge--ghost-mint">v0.8 | New Capabilities</span>
+            <span class="shared-badge">MCP</span><span class="shared-badge">JSON</span><span class="shared-badge">Semantic Search</span><span class="shared-badge">7,000+ Sources</span><span class="shared-badge shared-badge--ghost-mint">Live</span>
           </div>
         </article>
       </section>
@@ -36,18 +48,18 @@ const features = [
   </header>
   <main class="container">
     <section class="section" id="why-beans">
-      <div class="section-title"><h2>Why Beans</h2></div>
+      <div class="section-title"><h2>Why Beans</h2><p>Use the API when your product needs current source material and controlled retrieval.</p></div>
       <div class="grid">{features.map(([title, text]) => <article class="card shared-panel"><h3>{title}</h3><p>{text}</p></article>)}</div>
     </section>
     <section class="section" id="get-beans">
-      <div class="section-title"><h2>Get Started</h2></div>
+      <div class="section-title"><h2>Get Started</h2><p>The supported Beans offering is live API and MCP access.</p></div>
       <div class="products products--no-media">
         <article class="product shared-panel shared-panel--interactive">
-          <a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/beans-howto" aria-label="Open Beans API"></a>
-          <div><span class="tag shared-badge shared-badge--mint">Live</span><h3>🔌 API &amp; MCP</h3><p>Full endpoint reference, authentication, filtering, and examples. Ready to integrate Beans into your app or agent.</p></div>
+          <a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/beans-howto" aria-label="Read the Beans API documentation"></a>
+          <div><span class="tag shared-badge shared-badge--mint">Live</span><h3>🔌 API &amp; MCP</h3><p>Full endpoint reference, authentication, filtering, and examples for integrating Beans into an app, RAG pipeline, or agent. <a href="https://developer.cafecito.tech/howtos/beans-howto">Read the Beans API documentation</a>.</p></div>
         </article>
         <article class="product shared-panel">
-          <div><span class="tag shared-badge shared-badge--subtle reviving-badge">Reviving soon</span><h3>🌐 Web</h3><p>RSS feed reader on steroids. Search, filter, and explore trends without touching a single API call.</p></div>
+          <div><span class="tag shared-badge shared-badge--subtle reviving-badge">In development</span><h3>🌐 Web experience</h3><p>A browser-based feed reader for searching, filtering, and exploring trends is in development. For now, use the live API or MCP server.</p></div>
         </article>
       </div>
     </section>

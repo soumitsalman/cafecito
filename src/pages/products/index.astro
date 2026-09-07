@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { inDevelopmentProducts, liveProducts } from '../../data/products';
+---
+
+<BaseLayout
+  title="Products | Project Cafecito"
+  description="Explore Project Cafecito's live AI products and products in development: Beans, Espresso, Cortado, and MediCafe."
+  keywords="Project Cafecito products, Beans API, Espresso API, market intelligence, social automation, medical billing automation"
+>
+  <Nav />
+  <main>
+    <header class="product-hub-hero">
+      <div class="container">
+        <p class="eyebrow">Project Cafecito / Products</p>
+        <h1>Practical tools for the work behind the work.</h1>
+        <p class="product-hub-lede">
+          We build API-first AI products and focused workflows for independent professionals and small businesses. Start with a live product, or see what is brewing next.
+        </p>
+        <div class="product-hub-actions">
+          <a class="btn btn-primary" href="https://developer.cafecito.tech">Explore APIs &amp; MCPs</a>
+          <a class="btn btn-secondary" href="https://espresso.cafecito.tech/">Read Espresso Publications</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section product-hub-section" aria-labelledby="live-products-heading">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Available now</p>
+            <h2 id="live-products-heading">Live products</h2>
+          </div>
+          <p>Ready to explore, integrate, and use.</p>
+        </div>
+        <div class="product-catalog-grid">
+          {liveProducts.map((product) => <ProductCard product={product} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section product-hub-section" aria-labelledby="development-products-heading">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">On the roadmap</p>
+            <h2 id="development-products-heading">In development</h2>
+          </div>
+          <p>Ideas becoming practical products.</p>
+        </div>
+        <div class="product-catalog-grid">
+          {inDevelopmentProducts.map((product) => <ProductCard product={product} />)}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+
+<style is:global>
+  .product-hub-hero {
+    padding: 4.5rem 0 3.5rem;
+    background:
+      linear-gradient(135deg, rgba(18, 11, 7, 0.96), rgba(46, 22, 11, 0.9)),
+      url('/images/cafecito-banner.png') center / cover no-repeat;
+    border-bottom: 1px solid rgba(234, 216, 191, 0.16);
+  }
+
+  .product-hub-hero h1 {
+    max-width: 18ch;
+    margin-top: 0.7rem;
+    font-size: clamp(2.2rem, 7vw, 4.4rem);
+  }
+
+  .product-hub-lede {
+    max-width: 62ch;
+    margin: 1.15rem 0 0;
+    color: rgba(245, 239, 229, 0.86);
+    line-height: 1.65;
+    font-size: 1.05rem;
+  }
+
+  .product-hub-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+
+  .product-hub-section {
+    padding: 3rem 0 1rem;
+  }
+
+  .product-hub-section + .product-hub-section {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .section-title {
+    align-items: end;
+  }
+
+  .section-title .eyebrow {
+    margin: 0 0 0.35rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.65rem, 4vw, 2.35rem);
+  }
+
+  .product-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .product-catalog-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-height: 100%;
+  }
+
+  .product-catalog-card--live {
+    border-color: rgba(104, 218, 211, 0.28);
+  }
+
+  .product-catalog-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .product-catalog-icon {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    border-radius: 13px;
+    border: 1px solid rgba(245, 239, 229, 0.22);
+  }
+
+  .product-catalog-category {
+    margin: 0.45rem 0 0;
+    color: rgba(245, 239, 229, 0.68);
+    font-size: 0.83rem;
+  }
+
+  .product-catalog-card h3 {
+    color: var(--latte);
+    font-size: 1.65rem;
+  }
+
+  .product-catalog-description {
+    margin: 0;
+    color: rgba(245, 239, 229, 0.86);
+    line-height: 1.55;
+  }
+
+  .product-catalog-details {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0.15rem 0 0;
+  }
+
+  .product-catalog-details div {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .product-catalog-details dt {
+    color: var(--latte);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .product-catalog-details dd {
+    margin: 0;
+    color: rgba(245, 239, 229, 0.75);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .product-catalog-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.9rem;
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
+
+  .product-catalog-links a {
+    color: var(--mint);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    .product-hub-hero {
+      padding: 3.2rem 0 2.6rem;
+    }
+
+    .section-title {
+      display: block;
+    }
+
+    .section-title > p {
+      margin-top: 0.5rem;
+    }
+
+    .product-catalog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

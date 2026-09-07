@@ -1,3 +1,8 @@
+---
+title: Privacy Policy
+description: Project Cafecito privacy policy and information handling practices.
+---
+
 # Privacy Policy
 
 **Effective Date:** September 16, 2024

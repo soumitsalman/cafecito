@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   keywords?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -15,8 +16,33 @@ const {
   description = 'Project Cafecito builds practical AI tools for small business.',
   image = 'https://cafecito.tech/images/cafecito-banner.png',
   keywords,
+  jsonLd,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
+const pageSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteOrigin}/#organization`,
+      name: 'Project Cafecito',
+      description: 'Project Cafecito builds practical AI tools for small business.',
+      url: siteOrigin,
+      logo: `${siteOrigin}/images/cafecito.png`,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteOrigin}/#website`,
+      name: 'Project Cafecito',
+      url: siteOrigin,
+      publisher: { '@id': `${siteOrigin}/#organization` },
+      inLanguage: 'en-US',
+    },
+    ...pageSchemas,
+  ],
+};
 ---
 
 <!doctype html>
@@ -38,6 +64,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
     <meta name="twitter:image" content={image} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/images/favicon.ico" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <title>{title}</title>
   </head>
   <body>

@@ -1,6 +1,5 @@
 ---
-const home = Astro.url.pathname === '/';
-const productUrl = home ? '#products' : '/#products';
+const productUrl = '/products/';
 ---
 
 <nav class="top-nav">
@@ -13,7 +12,7 @@ const productUrl = home ? '#products' : '/#products';
       <summary aria-label="Open navigation">Menu</summary>
       <div class="mobile-menu-links">
         <a href={productUrl}>Products</a>
-        <a href="https://developer.cafecito.tech">APIs &amp; MCPs</a>
+        <a href="https://developer.cafecito.tech">Developer portal</a>
         <a href="/blogs/">Blogs</a>
         <a href="/docs/overview/">Overview</a>
         <a href="/docs/about-us/">About us</a>
@@ -24,7 +23,7 @@ const productUrl = home ? '#products' : '/#products';
     </details>
     <div class="nav-links">
       <a class="nav-pill" href={productUrl}>Products</a>
-      <a class="nav-pill" href="https://developer.cafecito.tech">APIs &amp; MCPs</a>
+      <a class="nav-pill" href="https://developer.cafecito.tech">Developer portal</a>
       <a class="nav-pill" href="/blogs/">Blogs</a>
       <details class="company-menu">
         <summary class="nav-pill">Company</summary>

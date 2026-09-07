@@ -6,6 +6,8 @@ import Footer from '../../components/Footer.astro';
 export async function getStaticPaths() { return (await getCollection('docs')).map((entry) => ({ params: { slug: entry.slug }, props: { entry } })); }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const title = entry.slug.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join(' ');
+const fallbackTitle = entry.slug.split('-').map((part) => part[0].toUpperCase() + part.slice(1)).join(' ');
+const title = entry.data.title ?? fallbackTitle;
+const description = entry.data.description ?? 'Project Cafecito documentation.';
 ---
-<BaseLayout title={`${title} | Project Cafecito`}><Nav /><main class="content-shell"><article><div class="content-prose"><Content /></div></article></main><Footer /></BaseLayout>
+<BaseLayout title={`${title} | Project Cafecito`} description={description}><Nav /><main class="content-shell"><article><div class="content-prose"><Content /></div></article></main><Footer /></BaseLayout>

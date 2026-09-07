@@ -1,3 +1,8 @@
+---
+title: Terms of Use
+description: Terms governing access to Project Cafecito websites and services.
+---
+
 # Terms of Service
 
 **Effective Date:** September 16, 2024

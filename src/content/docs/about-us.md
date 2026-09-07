@@ -1,3 +1,8 @@
+---
+title: About the Project Cafecito founders
+description: Meet the technology and operations leaders behind Project Cafecito and its practical AI products.
+---
+
 # About Us
 
 Project Cafecito was founded by two technology and operations veterans, **Soumit Salman Rahman** and **Daniel Oliver Vidaud**. They combined their experience in engineering, cybersecurity, aerospace, operations, and organizational change to build focused, cost-conscious tools for independent professionals and small businesses.

@@ -1,3 +1,8 @@
+---
+title: Company Overview
+description: Project Cafecito products, audiences, operating principles, and business relationship.
+---
+
 # Overview
 
 Project Cafecito builds practical AI products and API-first workflows for independent professionals and small businesses. This is where you can learn about the people, the company, and the principles behind the product lineup.
@@ -6,9 +11,9 @@ Project Cafecito builds practical AI products and API-first workflows for indepe
 
 ## What Project Cafecito builds
 
-Project Cafecito creates practical AI products, APIs, and automation workflows for independent professionals and small businesses. Our products focus on the repetitive work that consumes time without creating much value, from gathering useful information to supporting business intelligence and operational workflows.
+Project Cafecito creates practical AI products, APIs, and automation workflows for independent professionals and small businesses. Our products focus on the repetitive work that consumes time without creating much value, from gathering useful information to supporting market intelligence and operational workflows.
 
-Our current product line includes Beans, a news and blog aggregation API; Espresso, a business intelligence suite; and additional products in development for social automation and medical operations.
+Our current product line includes Beans, a news and blog aggregation API; Espresso, a market intelligence suite; and additional products in development for social automation and medical operations.
 
 ## Who we serve
 
