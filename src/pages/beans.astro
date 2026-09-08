@@ -17,18 +17,19 @@ const beansSchema = {
   name: "Beans",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
-  description: "Live news and blogs aggregation API with semantic search, structured filtering, JSON, and MCP support.",
+  description: "Live news and blogs platform with a browser-based News App, aggregation API, semantic search, structured filtering, JSON, and MCP support.",
   url: "https://cafecito.tech/beans/",
+  sameAs: ["https://beans.cafecito.tech/"],
   provider: { "@id": "https://cafecito.tech/#organization" },
   featureList: features.map(([title]) => title),
 };
 ---
 
 <BaseLayout
-  title="Beans API & MCP | Project Cafecito"
-  description="Curated news and blogs with semantic search, rich filtering, and clean JSON endpoints."
+  title="Beans News App, API & MCP | Project Cafecito"
+  description="Beans is a live news and blogs platform with a News App, semantic search, rich filtering, clean JSON endpoints, and MCP support."
   image="https://cafecito.tech/images/beans-banner.png"
-  keywords="Beans API, news API, blog API, vector search, MCP, Project Cafecito"
+  keywords="Beans News App, Beans API, news API, blog API, vector search, MCP, Project Cafecito"
   jsonLd={beansSchema}
 >
   <Nav />
@@ -58,8 +59,9 @@ const beansSchema = {
           <a class="product-link-overlay" href="https://developer.cafecito.tech/howtos/beans-howto" aria-label="Read the Beans API documentation"></a>
           <div><span class="tag shared-badge shared-badge--mint">Live</span><h3>🔌 API &amp; MCP</h3><p>Full endpoint reference, authentication, filtering, and examples for integrating Beans into an app, RAG pipeline, or agent. <a href="https://developer.cafecito.tech/howtos/beans-howto">Read the Beans API documentation</a>.</p></div>
         </article>
-        <article class="product shared-panel">
-          <div><span class="tag shared-badge shared-badge--subtle reviving-badge">In development</span><h3>🌐 Web experience</h3><p>A browser-based feed reader for searching, filtering, and exploring trends is in development. For now, use the live API or MCP server.</p></div>
+        <article class="product shared-panel shared-panel--interactive">
+          <a class="product-link-overlay" href="https://beans.cafecito.tech/" aria-label="Open the Beans News App"></a>
+          <div><span class="tag shared-badge shared-badge--mint">Live</span><h3>📰 News App</h3><p>The live Beans News App lets you search, filter, and explore news and blog trends in the browser. <a href="https://beans.cafecito.tech/">Open the Beans News App</a>.</p></div>
         </article>
       </div>
     </section>

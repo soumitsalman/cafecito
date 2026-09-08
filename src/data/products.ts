@@ -1,6 +1,6 @@
 export type ProductStatus = 'live' | 'in-development';
 
-export type ProductLinkType = 'overview' | 'documentation' | 'publication';
+export type ProductLinkType = 'overview' | 'documentation' | 'publication' | 'app';
 
 export interface ProductLink {
   label: string;
@@ -35,9 +35,9 @@ export const products = [
     statusLabel: 'Live',
     category: 'News & blogs API',
     description:
-      'An aggregation and search service for news and blogs, with semantic search, practical filtering, clean JSON, and MCP support for AI workflows.',
+      'A live aggregation and search service for news and blogs, with a browser-based News App, semantic search, practical filtering, clean JSON, and MCP support for AI workflows.',
     audience: 'Developers, AI agents, and teams building RAG or media-monitoring workflows.',
-    capabilities: ['News and blog aggregation', 'Semantic search', 'Rich filtering', 'JSON API and MCP'],
+    capabilities: ['News and blog aggregation', 'Browser News App', 'Semantic search', 'Rich filtering', 'JSON API and MCP'],
     image: '/images/beans.png',
     links: [
       { label: 'Beans product overview', href: '/beans/', type: 'overview' },
@@ -45,6 +45,12 @@ export const products = [
         label: 'Beans API and MCP documentation',
         href: 'https://developer.cafecito.tech/howtos/beans-howto',
         type: 'documentation',
+        external: true,
+      },
+      {
+        label: 'Beans News App',
+        href: 'https://beans.cafecito.tech/',
+        type: 'app',
         external: true,
       },
     ],

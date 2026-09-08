@@ -17,8 +17,9 @@ const content = `# Project Cafecito
 ### Beans
 
 - Status: live.
-- Description: News and blogs aggregation and search service with semantic query search, practical filtering, clean JSON output, and MCP support.
+- Description: Live news and blogs aggregation and search service with a browser-based News App, semantic query search, practical filtering, clean JSON output, and MCP support.
 - Product page: https://cafecito.tech/beans/
+- News App: https://beans.cafecito.tech/
 - Developer documentation: https://developer.cafecito.tech/howtos/beans-howto
 
 ### Espresso
